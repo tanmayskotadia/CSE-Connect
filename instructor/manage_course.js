@@ -46,6 +46,10 @@
 
             if (!currentCourse) return;
 
+            if (typeof injectExtraLectures === 'function') injectExtraLectures(allCourses);
+            if (typeof filterDeletedLectures === 'function') filterDeletedLectures(courseId, allCourses);
+            currentCourse = allCourses.find(c => c.id === courseId);
+
             document.getElementById('courseTitle').textContent = `Manage: ${currentCourse.title}`;
 
             populateLectures();
@@ -66,7 +70,9 @@
           <td>${lec.title}</td>
           <td>${lec.hasQuiz ? '✅' : '❌'}</td>
           <td>${lec.hasAssignment ? '✅' : '❌'}</td>
-          <td><button class="secondary-btn" style="padding:4px 8px; font-size:12px;">Edit</button></td>
+          <td>
+            <button class="secondary-btn" style="padding:4px 8px; font-size:12px; background:#ef4444; color:white; border:none;" onclick="deleteLecture('${lec.id}')">Delete</button>
+          </td>
         `;
                 tbody.appendChild(tr);
             });
@@ -76,6 +82,7 @@
     function populateSelects() {
         const qSelect = document.getElementById('quizLecSelect');
         const aSelect = document.getElementById('asgnLecSelect');
+        if (!qSelect || !aSelect) return;
         [qSelect, aSelect].forEach(s => s.innerHTML = '');
 
         currentCourse.modules.forEach(mod => {
@@ -123,7 +130,32 @@
     window.grade = (globalIndex) => {
         gradeSubmission(globalIndex);
         populateSubmissions();
-        showToast('Marked as Graded!');
+        showStickyNotification('Submission marked as Graded!');
+    };
+
+    window.deleteLecture = (lecId) => {
+        if (!confirm('Are you sure you want to delete this lecture? This will hide it for all students.')) return;
+
+        // Check if it's an extra lecture
+        const extraKey = 'cseconnect_extra_lectures_' + courseId;
+        const extraLecs = JSON.parse(localStorage.getItem(extraKey) || '[]');
+        const extraIdx = extraLecs.findIndex(l => l.id === lecId);
+
+        if (extraIdx !== -1) {
+            extraLecs.splice(extraIdx, 1);
+            localStorage.setItem(extraKey, JSON.stringify(extraLecs));
+        } else {
+            // It's a core lecture, add to deleted list
+            const deletedKey = 'cseconnect_deleted_lectures_' + courseId;
+            const deletedIds = JSON.parse(localStorage.getItem(deletedKey) || '[]');
+            if (!deletedIds.includes(lecId)) {
+                deletedIds.push(lecId);
+                localStorage.setItem(deletedKey, JSON.stringify(deletedIds));
+            }
+        }
+        
+        showStickyNotification('Lecture deleted successfully.');
+        loadCourseData();
     };
 
     window.saveQuiz = () => {
@@ -131,13 +163,13 @@
         const question = document.getElementById('quizQuestion').value.trim();
         if (!question) return alert('Enter a question.');
 
-        // In a real app, we'd save this to a DB. For now, localStorage.
-        const quizzes = JSON.parse(localStorage.getItem('cseconnect_quizzes') || '[]');
+        const extraKey = 'cseconnect_extra_quizzes_' + courseId;
+        const quizzes = JSON.parse(localStorage.getItem(extraKey) || '[]');
         quizzes.push({ courseId, lecId, question, id: Date.now() });
-        localStorage.setItem('cseconnect_quizzes', JSON.stringify(quizzes));
+        localStorage.setItem(extraKey, JSON.stringify(quizzes));
 
         document.getElementById('quizQuestion').value = '';
-        showToast('Quiz saved successfully!');
+        showStickyNotification('Quiz added to lecture.');
     };
 
     window.saveAssignment = () => {
@@ -146,13 +178,14 @@
         const desc = document.getElementById('asgnDesc').value.trim();
         if (!title || !desc) return alert('Enter title and description.');
 
-        const assignments = JSON.parse(localStorage.getItem('cseconnect_assignments') || '[]');
+        const extraKey = 'cseconnect_extra_assignments_' + courseId;
+        const assignments = JSON.parse(localStorage.getItem(extraKey) || '[]');
         assignments.push({ courseId, lecId, title, desc, id: Date.now() });
-        localStorage.setItem('cseconnect_assignments', JSON.stringify(assignments));
+        localStorage.setItem(extraKey, JSON.stringify(assignments));
 
         document.getElementById('asgnTitle').value = '';
         document.getElementById('asgnDesc').value = '';
-        showToast('Assignment saved successfully!');
+        showStickyNotification('Assignment assigned to lecture.');
     };
 
     // 6. Modal Functions
@@ -162,19 +195,58 @@
 
     window.handleLectureSave = () => {
         const title = document.getElementById('lecTitleInput').value.trim();
+        const videoUrl = document.getElementById('lecVideoInput').value.trim();
+        const hasQuiz = document.getElementById('lecQuizCheck').checked;
+        const hasAssignment = document.getElementById('lecAsgnCheck').checked;
+        
         if (!title) return alert('Enter title.');
 
-        // Mirroring save logic (would update courses.json in real life)
-        showToast('Lecture added (mirrored in local storage)');
+        const extraKey = 'cseconnect_extra_lectures_' + courseId;
+        const extraLecs = JSON.parse(localStorage.getItem(extraKey) || '[]');
+        const newLec = {
+            id: 'extra_' + Date.now(),
+            title: title,
+            videoUrl: videoUrl,
+            hasQuiz: hasQuiz,
+            hasAssignment: hasAssignment
+        };
+        extraLecs.push(newLec);
+        localStorage.setItem(extraKey, JSON.stringify(extraLecs));
+
+        showStickyNotification('New lecture uploaded.');
+        loadCourseData();
         closeLectureModal();
     };
 
-    function showToast(msg) {
-        const t = document.getElementById('toast');
-        if (!t) return;
-        t.textContent = msg;
-        t.classList.add('show');
-        setTimeout(() => t.classList.remove('show'), 2500);
+    function showStickyNotification(msg) {
+        let container = document.getElementById('notifContainer');
+        if (!container) {
+            container = document.createElement('div');
+            container.id = 'notifContainer';
+            container.style.cssText = 'position:fixed; top:20px; left:50%; transform:translateX(-50%); z-index:9999; display:flex; flex-direction:column; gap:10px; pointer-events:none;';
+            document.body.appendChild(container);
+        }
+
+        const toast = document.createElement('div');
+        toast.style.cssText = 'background:#1e293b; color:white; padding:12px 24px; border-radius:8px; box-shadow:0 10px 15px -3px rgba(0,0,0,0.1); border-left:4px solid #3b82f6; font-size:14px; font-weight:500; animation:slideDown 0.3s ease-out, fadeOut 0.3s ease-in 2.7s forwards; pointer-events:auto;';
+        toast.innerHTML = `<i class="fa-solid fa-circle-check" style="color:#3b82f6; margin-right:8px;"></i> ${msg}`;
+        
+        container.appendChild(toast);
+        setTimeout(() => toast.remove(), 3000);
     }
+
+    // Add CSS animations for the notification
+    const style = document.createElement('style');
+    style.innerHTML = `
+        @keyframes slideDown { 
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+    `;
+    document.head.appendChild(style);
 
 })();

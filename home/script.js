@@ -13,7 +13,7 @@ studentTab.onclick = () => {
     studentTab.classList.add("active")
     facultyTab.classList.remove("active")
     idLabel.textContent = "Student ID"
-    idInput.placeholder = "e.g. s001"
+    idInput.placeholder = "e.g. 24BCE1000"
     loginBtn.textContent = "Sign in as Student →"
     loginError.style.display = "none"
 }
@@ -23,7 +23,7 @@ facultyTab.onclick = () => {
     facultyTab.classList.add("active")
     studentTab.classList.remove("active")
     idLabel.textContent = "Faculty ID"
-    idInput.placeholder = "e.g. f001"
+    idInput.placeholder = "e.g. 55555"
     loginBtn.textContent = "Sign in as Faculty →"
     loginError.style.display = "none"
 }

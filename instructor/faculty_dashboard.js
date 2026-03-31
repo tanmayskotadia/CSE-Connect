@@ -38,6 +38,7 @@
     fetch('../data/courses.json')
         .then(res => res.json())
         .then(allCourses => {
+            if (typeof injectExtraLectures === 'function') injectExtraLectures(allCourses);
             const myCourses = allCourses.filter(c => assignedCourseIds.includes(c.id));
             renderDashboard(myCourses, pendingCount);
         })

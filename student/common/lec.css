@@ -2,6 +2,9 @@ body {
   margin: 0;
   font-family: system-ui;
   background: #eff0f3;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .module-accordion {
@@ -199,4 +202,6 @@ h1 {
   font-size: 13px;
   color: #6b7280;
   margin: 10px 0;
+  padding-bottom: 20px;
+  margin-top: auto;
 }

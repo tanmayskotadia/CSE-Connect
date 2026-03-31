@@ -1,28 +1,28 @@
 [
   {
-    "id": "s001",
+    "id": "24BCE1000",
     "role": "student",
-    "name": "Arun",
-    "password": "arun123"
+    "name": "Tanmay",
+    "password": "student123"
   },
   {
-    "id": "s002",
+    "id": "24BCE1001",
     "role": "student",
-    "name": "Tanmay Suresh Kotadia",
-    "password": "tanmay123"
+    "name": "Aditya",
+    "password": "student123"
   },
   {
-    "id": "f001",
+    "id": "55555",
     "role": "faculty",
     "name": "Dr. Meena",
-    "password": "meena123",
+    "password": "faculty123",
     "assignedCourses": ["web-programming", "data-structures"]
   },
   {
-    "id": "f002",
+    "id": "55556",
     "role": "faculty",
     "name": "Dr. Rajesh Kumar",
-    "password": "rajesh123",
+    "password": "faculty123",
     "assignedCourses": ["operating-systems", "artificial-intelligence"]
   }
 ]

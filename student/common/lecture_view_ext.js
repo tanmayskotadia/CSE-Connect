@@ -42,7 +42,7 @@
         // Show full-page locked overlay as per Phase 13
         document.body.innerHTML = `
       <div style="background:#0f172a; color:#fff; height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:20px; text-align:center; font-family:system-ui;">
-        <span style="font-size:64px; margin-bottom:20px;">🔒</span>
+        <i class="fa-solid fa-lock" style="font-size:64px; margin-bottom:20px;"></i>
         <h1 style="font-size:24px; margin-bottom:12px;">Course Locked</h1>
         <p style="opacity:0.8; max-width:400px; margin-bottom:24px;">This content is part of a premium course. Please purchase the course to access lectures, quizzes, and assignments.</p>
         <button onclick="window.location.href='course_detail.html'" style="background:#1d4ed8; color:#fff; border:none; padding:12px 28px; border-radius:12px; font-weight:600; cursor:pointer;">Back to Course Page</button>
@@ -89,8 +89,16 @@
         try {
             const res = await fetch('../../../data/courses.json');
             const courses = await res.json();
+            
+            if (typeof injectExtraLectures === 'function') injectExtraLectures(courses);
+            if (typeof filterDeletedLectures === 'function') filterDeletedLectures(cid, courses);
+            
             const course = courses.find(c => c.id === cid || c.id === cid.replace('-', ' '));
             if (!course) return;
+
+            // Load extra quiz/assignment metadata
+            const extraQuizzes = JSON.parse(localStorage.getItem('cseconnect_extra_quizzes_' + course.id) || '[]');
+            const extraAsgns = JSON.parse(localStorage.getItem('cseconnect_extra_assignments_' + course.id) || '[]');
 
             list.innerHTML = '';
             course.modules.forEach(mod => {
@@ -114,12 +122,21 @@
                     const card = document.createElement('div');
                     card.className = 'lecture-card';
 
-                    const progressMap = JSON.parse(localStorage.getItem('cseconnect_progress') || '{}');
-                    const isComp = progressMap[course.id] && progressMap[course.id][lec.id];
+                    const progress = getProgress();
+                    const isComp = progress[course.id] && progress[course.id][lec.id];
+
+                    // Determine if buttons should be visible
+                    const hasQuiz = lec.hasQuiz || extraQuizzes.some(q => q.lecId === lec.id);
+                    const hasAsgn = lec.hasAssignment || extraAsgns.some(a => a.lecId === lec.id);
 
                     card.innerHTML = `
             <div class="lecture-left">
-              <input type="checkbox" class="lecture-check" ${isComp ? 'checked' : ''} onclick="return false;">
+              <input type="checkbox" class="lecture-check" ${isComp ? 'checked' : ''} onchange="
+                markLectureComplete('${course.id}', '${lec.id}', this.checked);
+                const stat = this.closest('.lecture-left').querySelector('.status');
+                stat.className = this.checked ? 'status completed' : 'status pending';
+                stat.textContent = this.checked ? 'Completed' : 'Not Completed';
+              ">
               <div class="info">
                 <h4>${lec.title}</h4>
                 <div class="lec-meta">
@@ -129,8 +146,8 @@
             </div>
             <div class="actions">
               <button class="action-btn watch" onclick="window.location.href='watch.html?lecId=${lec.id}'"><i class="fa-solid fa-play"></i> Watch</button>
-              ${lec.hasQuiz ? `<button class="action-btn quiz" onclick="window.location.href='quiz.html?lecId=${lec.id}'"><i class="fa-solid fa-question"></i> Quiz</button>` : ''}
-              ${lec.hasAssignment ? `<button class="action-btn assignment" onclick="window.location.href='assignment.html?lecId=${lec.id}'"><i class="fa-solid fa-file-lines"></i> Assignment</button>` : ''}
+              ${hasQuiz ? `<button class="action-btn quiz" onclick="window.location.href='quiz.html?lecId=${lec.id}'"><i class="fa-solid fa-question"></i> Quiz</button>` : ''}
+              ${hasAsgn ? `<button class="action-btn assignment" onclick="window.location.href='assignment.html?lecId=${lec.id}'"><i class="fa-solid fa-file-lines"></i> Assignment</button>` : ''}
             </div>
           `;
                     body.appendChild(card);
@@ -276,7 +293,7 @@
             toast.className = 'toast';
             document.body.appendChild(toast);
         }
-        toast.textContent = msg;
+        toast.innerHTML = msg;
         toast.classList.add('show');
         setTimeout(() => toast.classList.remove('show'), 2500);
     }

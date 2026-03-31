@@ -46,7 +46,7 @@ function initButtons() {
       } else {
         purchaseCourse(courseId);
         updateButton(btn, courseId);
-        showToast('Enrolled successfully! 🎉');
+        showToast('Enrolled successfully! <i class="fa-solid fa-check"></i>');
       }
     });
   });
@@ -66,7 +66,7 @@ function updateButton(btn, courseId) {
 // --- Toast notification ---
 function showToast(message) {
   const toast = document.getElementById('toast');
-  toast.textContent = message;
+  toast.innerHTML = message;
   toast.classList.add('show');
   setTimeout(() => toast.classList.remove('show'), 2500);
 }

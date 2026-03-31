@@ -37,11 +37,12 @@
 
     // 3. Load Courses and Progress
     const purchasedIds = getPurchasedCourses();
-    const progressMap = JSON.parse(localStorage.getItem('cseconnect_progress') || '{}');
+    const progressMap = getProgress();
 
     fetch('../data/courses.json')
         .then(res => res.json())
         .then(allCourses => {
+            if (typeof injectExtraLectures === 'function') injectExtraLectures(allCourses);
             const enrolledCourses = allCourses.filter(c => purchasedIds.includes(c.id));
             renderDashboard(enrolledCourses, allCourses, progressMap);
         })
