@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSEConnect | Course Details</title>
+
+  <link rel="stylesheet" href="../../common/course_detail.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">CSEConnect</div>
+  <div class="nav-links">
+    <a href="../../course_page.html">Courses</a>
+    <a href="../../student_dashboard.html">Dashboard</a>
+    <a href="../../../home/index.html">Logout</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <a href="../../course_page.html" class="back-link">
+    <i class="fa-solid fa-arrow-left"></i>
+    Back to Courses
+  </a>
+
+  <section class="course-header">
+
+    <div class="course-header-top">
+      <div class="course-info">
+        <h1>Data Structures</h1>
+        <p class="description">
+          Master arrays, linked lists, trees, graphs and algorithms for efficient problem solving.
+        </p>
+      </div>
+
+      <button class="header-btn" onclick="goToLectures()">
+        <i class="fa-solid fa-play"></i>
+        View Lectures
+      </button>
+    </div>
+
+    <div class="meta">
+      <span>
+        <i class="fa-solid fa-clock"></i>
+        16 Weeks
+      </span>
+      <span>
+        <i class="fa-solid fa-graduation-cap"></i>
+        4 Credits
+      </span>
+      <span>
+        <i class="fa-solid fa-user"></i>
+        Dr. Rajesh Kumar
+      </span>
+    </div>
+
+  </section>
+
+  <!-- ROW 1 -->
+  <section class="content-grid two-col">
+
+    <div class="card">
+      <h3>
+        <i class="fa-solid fa-book"></i>
+        Syllabus
+      </h3>
+      <ol>
+        <li>Arrays & Strings</li>
+        <li>Linked Lists</li>
+        <li>Stacks & Queues</li>
+        <li>Trees & Binary Search Trees</li>
+        <li>Graphs</li>
+        <li>Hashing</li>
+        <li>Sorting Algorithms</li>
+        <li>Dynamic Programming</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h3>
+        <i class="fa-solid fa-check-circle"></i>
+        Learning Outcomes
+      </h3>
+      <ul class="outcomes">
+        <li>Implement core data structures from scratch</li>
+        <li>Analyze time and space complexity</li>
+        <li>Select optimal data structures for real problems</li>
+        <li>Solve algorithmic and competitive programming challenges</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <div class="section-gap"></div>
+
+  <!-- ROW 2 -->
+  <section class="content-grid one-col">
+
+    <div class="card">
+      <h3>
+        <i class="fa-solid fa-file-pdf"></i>
+        University Syllabus 
+      </h3>
+
+      <iframe
+        src="../../../pdf/dsa.pdf"
+        class="syllabus-pdf">
+      </iframe>
+
+      <div class="pdf-action">
+        <a href="../../../pdf/dsa.pdf" target="_blank">
+          <i class="fa-solid fa-up-right-from-square"></i>
+          Open in New Tab
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+</div>
+<footer class="footer">
+    &copy; 2026 CSEConnect&trade; · Made by Tanmay Suresh Kotadia
+</footer>
+<script src="course_detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CSEConnect</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="left">
+<div class="hero">
+
+<div class="hero-logo">
+<i class="fa-solid fa-laptop-code"></i>
+</div>
+
+<h1>CSEConnect</h1>
+
+<p class="desc">
+A centralized learning platform built exclusively for
+<strong>B.Tech Computer Science & Engineering</strong> students.
+Manage courses, lectures, quizzes, and academic progress all in one place.
+</p>
+
+<ul class="features">
+<li>Structured CSE curriculum & resources</li>
+<li>Lecture-wise quizzes & assignments</li>
+</ul>
+
+<div class="tagline">
+Learn • Code • Progress
+</div>
+
+</div>
+</div>
+
+<div class="right">
+
+<div class="card">
+
+<h2>Welcome back</h2>
+<p class="sub">Sign in to continue your learning journey</p>
+
+<div class="tabs">
+<button id="studentTab" class="active">Student</button>
+<button id="facultyTab">Faculty</button>
+</div>
+
+<label id="idLabel">Student ID</label>
+<input id="idInput" type="text" placeholder="e.g. 24BCE1000">
+
+<label>Password</label>
+<input type="password" placeholder="Enter your password">
+
+<button id="loginBtn" class="login">
+Sign in as Student →
+</button>
+
+<div style="margin:20px 0;text-align:center;">OR</div>
+
+<div id="g_id_onload"
+data-client_id="847849236712-o99pb85tjilva2d6n5qvipla6df0vhaf.apps.googleusercontent.com"
+data-callback="handleCredentialResponse"
+data-auto_prompt="false">
+</div>
+
+<div class="g_id_signin"
+data-type="standard"
+data-size="large"
+data-theme="outline"
+data-text="signin_with"
+data-shape="rectangular">
+</div>
+
+</div>
+
+<p class="signup-text">
+Don’t have an account? <a href="signup.html">Sign up</a>
+</p>
+
+</div>
+
+</div>
+
+<footer class="footer">
+© 2026 CSEConnect™ · Made by Tanmay Suresh Kotadia
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

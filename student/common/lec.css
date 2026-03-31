@@ -1,0 +1,152 @@
+body {
+  margin: 0;
+  font-family: system-ui;
+  background: #eff0f3;
+}
+
+.navbar {
+  background: #fff;
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 600;
+  color: #1e55cb;
+  font-size: 20px;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #555;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.container {
+  padding: 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.back-link {
+  text-decoration: none;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+h1 {
+  margin-top: 10px;
+}
+
+.subtitle {
+  color: #6b7280;
+  margin-bottom: 30px;
+}
+
+.lecture-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.lecture-card {
+  background: #fff;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 26px;
+}
+
+.lecture-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.lecture-check {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #cbd5f5;
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+  background: #fff;
+}
+
+.lecture-check:checked {
+  background: #22c55e;
+  border-color: #22c55e;
+}
+
+.lecture-check:checked::after {
+  content: "✓";
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.info h3 {
+  margin: 0;
+}
+
+.info p {
+  margin: 0;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.status {
+  width: fit-content;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.status.completed {
+  background: #e0e7ff;
+  color: #2563eb;
+}
+
+.status.pending {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.actions button {
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  background: #eef2ff;
+}
+
+.footer{
+  text-align:center;
+  font-size:13px;
+  color:#6b7280;
+  margin:10px 0;
+}

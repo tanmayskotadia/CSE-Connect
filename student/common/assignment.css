@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  background: #eff0f3;
+  color: #111;
+}
+
+.navbar {
+  background: #fff;
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 600;
+  color: #1e55cb;
+  font-size: 20px;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #555;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.container {
+  max-width: 720px;
+  margin: 40px auto 80px;
+  padding: 0 20px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-size: 14px;
+  color: #6b7280;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 26px;
+  margin-bottom: 4px;
+}
+
+.due-date {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+.assignment-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 28px;
+  border: 1px solid #e5e7eb;
+}
+
+.assignment-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.question {
+  font-size: 15px;
+  color: #374151;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.answer-label {
+  font-size: 14px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 140px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  padding: 12px;
+  font-size: 14px;
+  resize: vertical;
+  margin-bottom: 24px;
+}
+
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #0b1220;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.submit-btn:hover {
+  background: #111827;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.footer{
+  text-align:center;
+  font-size:13px;
+  color:#6b7280;
+  margin:10px 0;
+  position:fixed;
+  bottom:0;
+  width:100%;
+}

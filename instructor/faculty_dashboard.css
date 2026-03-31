@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui;
+}
+
+body {
+  background: #eff0f3;
+  color: #111;
+}
+
+.navbar {
+  background: #fff;
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 600;
+  color: #1e55cb;
+  font-size: 20px;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #555;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.nav-links .active {
+  background: #e0e7ff;
+  color: #1d4ed8;
+}
+
+.container {
+  padding: 40px;
+}
+
+.profile-card {
+  background: #0b1220;
+  color: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.profile-info span {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.stats {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.stat-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.stat-box h3 {
+  font-size: 22px;
+}
+
+.stat-box p {
+  margin-top: 6px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.courses-header {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.view-btn {
+  background: #1d4ed8;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.courses {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.course-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.course-card .icon {
+  width: 42px;
+  height: 42px;
+  background: #e0e7ff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.course-card p {
+  color: #6b7280;
+  margin: 6px 0 14px;
+}
+
+.course-card button {
+  border: none;
+  background: #e0e7ff;
+  color: #1d4ed8;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+}

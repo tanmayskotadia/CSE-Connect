@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CSEConnect | Introduction to Machine Learning</title>
+
+<link rel="stylesheet" href="../../common/watch.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">CSEConnect</div>
+  <div class="nav-links">
+    <a href="../../course_page.html">Courses</a>
+    <a href="../../student_dashboard.html">Dashboard</a>
+    <a href="../../../home/index.html">Logout</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <a href="lec.html" class="back-link">← Back to Lectures</a>
+
+  <h1>Introduction to Machine Learning</h1>
+
+  <div class="video-box">
+    <iframe
+      width="100%"
+      height="400"
+      src="https://www.youtube.com/embed/GwIo3gDZCVQ"
+      title="Introduction to Machine Learning"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <h2>Interactive Whiteboard</h2>
+
+  <div class="whiteboard">
+
+    <canvas id="board"></canvas>
+
+<div class="board-controls">
+
+<button onclick="setTool('pen')">Pen</button>
+<button onclick="setTool('line')">Line</button>
+<button onclick="setTool('circle')">Circle</button>
+<button onclick="setTool('rect')">Rectangle</button>
+
+<button class="clear-btn" onclick="clearBoard()">Clear</button>
+<button class="save-btn" onclick="saveBoard()">Save</button>
+
+</div>
+
+  </div>
+
+  <br><br>
+
+  <div class="notes-card">
+    <h3>📄 Lecture Notes</h3>
+    <p>
+      Machine Learning focuses on enabling systems to learn patterns from data
+      and make predictions without explicit programming. This lecture introduces
+      supervised and unsupervised learning, datasets, features, and basic model
+      evaluation concepts.
+    </p>
+  </div>
+
+</div>
+
+<footer class="footer">
+  &copy; 2026 CSEConnect&trade; · Made by Tanmay Suresh Kotadia
+</footer>
+
+<script src="../../common/canvas.js"></script>
+
+</body>
+</html>
