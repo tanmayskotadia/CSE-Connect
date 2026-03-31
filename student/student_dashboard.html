@@ -50,23 +50,23 @@
     </section>
 
     <section class="progress-section">
-      <h3>Overall Progress</h3>
-      <p>Course Completion</p>
-      <div class="progress-bar">
-        <div class="progress-fill"></div>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h3>Overall Progress</h3>
+        <span class="progress-text" id="overallProgressText">0%</span>
       </div>
-      <div class="progress-fill" id="overallProgressBar"></div>
-  </div>
-  <span class="progress-text" id="overallProgressText">0%</span>
-  </section>
+      <p style="margin-top: -10px; color: #6b7280; font-size: 14px;">Course Completion</p>
+      <div class="progress-bar">
+        <div class="progress-fill" id="overallProgressBar" style="width: 0%;"></div>
+      </div>
+    </section>
 
-  <section class="enrolled">
-    <h3>Enrolled Courses</h3>
+    <section class="enrolled">
+      <h3>Enrolled Courses</h3>
 
-    <div class="course-grid" id="enrolledCoursesGrid">
-      <!-- Dynamically populated -->
-    </div>
-  </section>
+      <div class="course-grid" id="enrolledCoursesGrid">
+        <!-- Dynamically populated -->
+      </div>
+    </section>
 
 
   </div>
@@ -75,6 +75,7 @@
   </footer>
   <script src="../lib/auth.js"></script>
   <script src="../lib/purchaseUtils.js"></script>
+  <script src="../lib/submissionUtils.js"></script>
   <script src="student_dashboard.js"></script>
 </body>
 

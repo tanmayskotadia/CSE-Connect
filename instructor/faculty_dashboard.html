@@ -11,58 +11,49 @@
 <body>
 
   <nav class="navbar">
-    <div class="logo">CSEConnect</div>
+    <div class="logo">CSEConnect <span class="badge">Faculty</span></div>
     <div class="nav-links">
       <a class="active">Dashboard</a>
-      <a href="view_sub.html">Submissions</a>
-      <a href="../home/index.html">Logout</a>
+      <a href="../home/index.html" id="logoutBtn">Logout</a>
     </div>
   </nav>
 
   <div class="container">
-
-    <section class="profile-card">
-      <div class="avatar" id="facAvatar">
-        <i class="fa-solid fa-user-tie"></i>
-      </div>
-      <div class="profile-info">
-        <h2 id="facName">Loading...</h2>
-        <p id="facIdDisplay">Associate Professor · 55555</p>
-        <span>Computer Science & Engineering</span>
-      </div>
+    <section class="welcome">
+      <h1 id="facultyWelcome">Welcome, Faculty</h1>
+      <p>Department of Computer Science & Engineering</p>
     </section>
 
-    <section class="stats">
-      <div class="stat-box">
-        <h3 id="statTotalLec">0</h3>
-        <p>Total Lectures</p>
-      </div>
-      <div class="stat-box">
-        <h3 id="statAssigned">0</h3>
+    <div class="stats-row">
+      <div class="stat-card">
+        <h2 id="statAssigned">0</h2>
         <p>Assigned Courses</p>
       </div>
-      <div class="stat-box">
-        <h3 id="statPendingSub">0</h3>
+      <div class="stat-card">
+        <h2 id="statLectures">0</h2>
+        <p>Total Lectures</p>
+      </div>
+      <div class="stat-card">
+        <h2 id="statPending">0</h2>
         <p>Pending Submissions</p>
       </div>
+    </div>
+
+    <section class="assigned-courses">
+      <h3>Your Assigned Courses</h3>
+      <div class="course-grid" id="facultyCourseGrid">
+        <!-- Dynamically populated -->
+      </div>
     </section>
+  </div>
 
-    <section class="courses-header">
-      <h2>Assigned Courses</h2>
-      <button class="view-btn">
-        <i class="fa-solid fa-eye"></i>
-        View Submissions
-      </button>
-    </section>
+  <footer class="footer">
+    &copy; 2026 CSEConnect&trade; &middot; Made by Tanmay Suresh Kotadia
+  </footer>
 
-    <section class="courses" id="facCourseGrid">
-      <!-- Dynamically populated -->
-    </section>
-
-
-    <script src="../lib/auth.js"></script>
-    <script src="../lib/submissionUtils.js"></script>
-    <script src="faculty_dashboard.js"></script>
+  <script src="../lib/auth.js"></script>
+  <script src="../lib/submissionUtils.js"></script>
+  <script src="faculty_dashboard.js"></script>
 </body>
 
 </html>

@@ -20,9 +20,23 @@
     const urlParams = new URLSearchParams(window.location.search);
     const lecId = urlParams.get('lecId');
 
-    // We can infer courseId from the folder name if not provided
-    // Or just use a global COURSE_ID if defined in the page
-    const courseId = window.COURSE_ID || window.location.pathname.split('/').slice(-2, -1)[0].replace('%20', '-');
+    // Map folder names to courses.json IDs
+    const folderToId = {
+        "ai": "artificial-intelligence",
+        "cn": "computer-networks",
+        "data structure": "data-structures",
+        "dbms": "database-management",
+        "ml": "machine-learning",
+        "os": "operating-systems",
+        "software engg": "software-engineering",
+        "web prog": "web-programming"
+    };
+
+    const pathParts = window.location.pathname.split('/');
+    const folderName = decodeURIComponent(pathParts[pathParts.length - 2]);
+    const inferredId = folderToId[folderName] || folderName.replace(/\s+/g, '-').toLowerCase();
+
+    const courseId = window.COURSE_ID || inferredId;
 
     if (!hasPurchased(courseId)) {
         // Show full-page locked overlay as per Phase 13
@@ -80,11 +94,26 @@
 
             list.innerHTML = '';
             course.modules.forEach(mod => {
+                const accordion = document.createElement('div');
+                accordion.className = 'module-accordion open'; // default open for lectures page
+
+                accordion.innerHTML = `
+          <div class="module-header">
+            <h3><span class="mod-num">${mod.moduleNumber}</span> ${mod.title}</h3>
+            <i class="fa-solid fa-chevron-down chevron"></i>
+          </div>
+          <div class="module-body"></div>
+        `;
+
+                const header = accordion.querySelector('.module-header');
+                header.onclick = () => accordion.classList.toggle('open');
+
+                const body = accordion.querySelector('.module-body');
+
                 mod.lectures.forEach(lec => {
                     const card = document.createElement('div');
                     card.className = 'lecture-card';
 
-                    // Check if completed (already in progressMap)
                     const progressMap = JSON.parse(localStorage.getItem('cseconnect_progress') || '{}');
                     const isComp = progressMap[course.id] && progressMap[course.id][lec.id];
 
@@ -92,19 +121,22 @@
             <div class="lecture-left">
               <input type="checkbox" class="lecture-check" ${isComp ? 'checked' : ''} onclick="return false;">
               <div class="info">
-                <h3>${lec.title}</h3>
-                <p>Module ${mod.moduleNumber}</p>
-                <span class="status ${isComp ? 'completed' : 'pending'}">${isComp ? 'Completed' : 'Not Completed'}</span>
+                <h4>${lec.title}</h4>
+                <div class="lec-meta">
+                  <span class="status ${isComp ? 'completed' : 'pending'}">${isComp ? 'Completed' : 'Not Completed'}</span>
+                </div>
               </div>
             </div>
             <div class="actions">
-              <button onclick="window.location.href='watch.html?lecId=${lec.id}'"><i class="fa-solid fa-play"></i> Watch</button>
-              ${lec.hasQuiz ? `<button onclick="window.location.href='quiz.html?lecId=${lec.id}'"><i class="fa-solid fa-question"></i> Quiz</button>` : ''}
-              ${lec.hasAssignment ? `<button onclick="window.location.href='assignment.html?lecId=${lec.id}'"><i class="fa-solid fa-file-lines"></i> Assignment</button>` : ''}
+              <button class="action-btn watch" onclick="window.location.href='watch.html?lecId=${lec.id}'"><i class="fa-solid fa-play"></i> Watch</button>
+              ${lec.hasQuiz ? `<button class="action-btn quiz" onclick="window.location.href='quiz.html?lecId=${lec.id}'"><i class="fa-solid fa-question"></i> Quiz</button>` : ''}
+              ${lec.hasAssignment ? `<button class="action-btn assignment" onclick="window.location.href='assignment.html?lecId=${lec.id}'"><i class="fa-solid fa-file-lines"></i> Assignment</button>` : ''}
             </div>
           `;
-                    list.appendChild(card);
+                    body.appendChild(card);
                 });
+
+                list.appendChild(accordion);
             });
 
             const subtitle = document.querySelector('.subtitle');

@@ -17,24 +17,23 @@
     }
 
     // 2. Display User Info
-    document.getElementById('facName').textContent = session.name;
-    document.getElementById('facIdDisplay').textContent = `Faculty ID: ${session.id} · Computer Science`;
+    const welcome = document.getElementById('facultyWelcome');
+    if (welcome) welcome.textContent = `Welcome, ${session.name}`;
 
     // Handle Logout
-    document.querySelectorAll('.nav-links a').forEach(a => {
-        if (a.textContent.trim() === 'Logout') {
-            a.addEventListener('click', (e) => {
-                e.preventDefault();
-                logoutUser();
-                window.location.href = '../home/index.html';
-            });
-        }
-    });
+    const logoutBtn = document.getElementById('logoutBtn');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            logoutUser();
+            window.location.href = '../home/index.html';
+        });
+    }
 
     // 3. Load Courses and Submissions
     const assignedCourseIds = session.assignedCourses || [];
-    const submissions = getAllSubmissions();
-    const pendingCount = submissions.filter(s => s.status === 'pending' && assignedCourseIds.includes(s.courseId)).length;
+    const allSubmissions = getSubmissions();
+    const pendingCount = allSubmissions.filter(s => s.status === 'pending' && assignedCourseIds.includes(s.courseId)).length;
 
     fetch('../data/courses.json')
         .then(res => res.json())
@@ -47,16 +46,18 @@
     function renderDashboard(courses, pending) {
         // Stats
         document.getElementById('statAssigned').textContent = courses.length;
-        document.getElementById('statPendingSub').textContent = pending;
+        document.getElementById('statPending').textContent = pending;
 
         let totalLec = 0;
         courses.forEach(c => {
-            c.modules.forEach(m => totalLec += m.lectures.length);
+            if (c.modules) {
+                c.modules.forEach(m => totalLec += m.lectures.length);
+            }
         });
-        document.getElementById('statTotalLec').textContent = totalLec;
+        document.getElementById('statLectures').textContent = totalLec;
 
         // Grid
-        const grid = document.getElementById('facCourseGrid');
+        const grid = document.getElementById('facultyCourseGrid');
         grid.innerHTML = '';
 
         if (courses.length === 0) {
@@ -84,9 +85,9 @@
 
             card.innerHTML = `
         <div class="icon"><i class="${farBrand} ${iconClass}"></i></div>
-        <h3>${course.title}</h3>
+        <h4>${course.title}</h4>
         <p>${course.duration || '12 Weeks'} · ${course.credits || '3'} Credits</p>
-        <button onclick="window.location.href='manage_course.html?courseId=${course.id}'">Manage</button>
+        <a href="manage_course.html?courseId=${course.id}" class="manage-btn">Manage Course</a>
       `;
             grid.appendChild(card);
         });

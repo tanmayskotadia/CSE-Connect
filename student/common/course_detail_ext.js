@@ -39,96 +39,12 @@
     fetch('../../../data/courses.json')
         .then(r => r.json())
         .then(courses => {
-            const course = courses.find(c => c.id === courseId);
-            if (!course || !course.modules) return;
-
-            buildAccordion(course, purchased);
-
             if (!purchased) {
                 addLockedOverlay();
             }
         })
         .catch(err => console.error('Failed to load courses.json', err));
 
-    function buildAccordion(course, isPurchased) {
-        // Find or create modules section
-        let section = document.querySelector('.modules-section');
-        if (!section) {
-            section = document.createElement('section');
-            section.className = 'modules-section';
-
-            const heading = document.createElement('h2');
-            heading.innerHTML = '<i class="fa-solid fa-layer-group"></i> Course Modules';
-            section.appendChild(heading);
-
-            // Insert before the footer or at end of container
-            const container = document.querySelector('.container');
-            const footer = document.querySelector('.footer');
-            if (footer && container) {
-                container.appendChild(section);
-            } else if (container) {
-                container.appendChild(section);
-            }
-        }
-
-        course.modules.forEach(mod => {
-            const accordion = document.createElement('div');
-            accordion.className = 'module-accordion';
-
-            // Header
-            const header = document.createElement('div');
-            header.className = 'module-header';
-            header.innerHTML = `
-        <h3>
-          <span class="mod-num">${mod.moduleNumber}</span>
-          ${mod.title}
-        </h3>
-        <i class="fa-solid fa-chevron-down chevron"></i>
-      `;
-            header.addEventListener('click', () => {
-                accordion.classList.toggle('open');
-            });
-            accordion.appendChild(header);
-
-            // Body
-            const body = document.createElement('div');
-            body.className = 'module-body';
-
-            mod.lectures.forEach(lec => {
-                const row = document.createElement('div');
-                row.className = 'accordion-lecture';
-
-                const titleDiv = document.createElement('div');
-                titleDiv.className = 'lec-title' + (!isPurchased ? ' locked' : '');
-
-                if (!isPurchased) {
-                    titleDiv.innerHTML = `<i class="fa-solid fa-lock lock-sm"></i> ${lec.title}`;
-                } else {
-                    titleDiv.textContent = lec.title;
-                    row.style.cursor = 'pointer';
-                    row.onclick = () => {
-                        window.location.href = `watch.html?lecId=${lec.id}`;
-                    };
-                }
-
-                const badges = document.createElement('div');
-                badges.className = 'lec-badges';
-                if (lec.hasQuiz) {
-                    badges.innerHTML += '<span class="lec-badge quiz">Quiz</span>';
-                }
-                if (lec.hasAssignment) {
-                    badges.innerHTML += '<span class="lec-badge assignment">Assignment</span>';
-                }
-
-                row.appendChild(titleDiv);
-                row.appendChild(badges);
-                body.appendChild(row);
-            });
-
-            accordion.appendChild(body);
-            section.appendChild(accordion);
-        });
-    }
 
     function addLockedOverlay() {
         // Add overlay on top of the modules section + existing content below header

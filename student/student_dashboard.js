@@ -67,6 +67,21 @@
         document.getElementById('statCompleted').textContent = completedLectures;
         document.getElementById('statTotal').textContent = totalLectures;
 
+        // Pending Assignments (mock logic: check lectures with assignments that haven't been submitted)
+        const allSubmissions = getSubmissions();
+        let pendingAssignments = 0;
+        enrolled.forEach(c => {
+            c.modules.forEach(m => {
+                m.lectures.forEach(l => {
+                    if (l.hasAssignment) {
+                        const submitted = allSubmissions.some(s => s.studentId === session.id && s.courseId === c.id && s.lectureId === l.id);
+                        if (!submitted) pendingAssignments++;
+                    }
+                });
+            });
+        });
+        document.getElementById('statPending').textContent = pendingAssignments;
+
         // Overall Progress
         const perc = totalLectures > 0 ? Math.round((completedLectures / totalLectures) * 100) : 0;
         const fill = document.getElementById('overallProgressBar');

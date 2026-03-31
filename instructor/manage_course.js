@@ -91,23 +91,27 @@
         const tbody = document.getElementById('submissionTableBody');
         tbody.innerHTML = '';
 
-        const submissions = getAllSubmissions().filter(s => s.courseId === courseId);
+        const submissions = getSubmissions().filter(s => s.courseId === courseId);
 
         if (submissions.length === 0) {
             tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding:20px; color:#64748b;">No submissions yet.</td></tr>';
             return;
         }
 
-        submissions.forEach(sub => {
+        submissions.forEach((sub, localIndex) => {
+            // Find global index in the full submissions array for grading
+            const fullList = getSubmissions();
+            const globalIndex = fullList.findIndex(s => s.studentId === sub.studentId && s.lectureId === sub.lectureId && s.submittedAt === sub.submittedAt);
+
             const tr = document.createElement('tr');
             tr.innerHTML = `
         <td>${sub.studentName || sub.studentId}</td>
         <td>${sub.lectureId}</td>
         <td><i style="color:#64748b;">"${sub.content.substring(0, 30)}${sub.content.length > 30 ? '...' : ''}"</i></td>
-        <td><span class="badge ${sub.status}">${sub.status}</span></td>
+        <td><span class="status-badge ${sub.status}">${sub.status}</span></td>
         <td>
           ${sub.status === 'pending'
-                    ? `<button class="secondary-btn" onclick="grade('${sub.id}')">Grade</button>`
+                    ? `<button class="secondary-btn" style="padding:4px 8px; font-size:12px;" onclick="grade(${globalIndex})">Grade</button>`
                     : '---'}
         </td>
       `;
@@ -116,8 +120,8 @@
     }
 
     // 5. Global Actions
-    window.grade = (subId) => {
-        updateSubmissionStatus(subId, 'graded');
+    window.grade = (globalIndex) => {
+        gradeSubmission(globalIndex);
         populateSubmissions();
         showToast('Marked as Graded!');
     };

@@ -102,14 +102,14 @@ body {
 
 .progress-fill {
   height: 100%;
-  width: 44%;
   background: #3b82f6;
+  transition: width 0.4s ease;
 }
 
 .progress-text {
-  float: right;
-  font-size: 14px;
-  color: #6b7280;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e55cb;
 }
 
 .enrolled {

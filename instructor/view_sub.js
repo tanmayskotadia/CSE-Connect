@@ -18,7 +18,7 @@
 
     // 2. Populate Table
     const assignedCourses = session.assignedCourses || [];
-    const submissions = getAllSubmissions().filter(s => assignedCourses.includes(s.courseId));
+    const submissions = getSubmissions().filter(s => assignedCourses.includes(s.courseId));
 
     const tbody = document.getElementById('globalSubTableBody');
     const subtitle = document.getElementById('subSubtitle');
@@ -51,10 +51,9 @@
     }
 
     window.openSub = (id) => {
-        const sub = getAllSubmissions().find(s => s.id === id);
+        const sub = getSubmissions().find(s => s.id === id);
         if (!sub) return;
         alert(`Submission by ${sub.studentName}:\n\n${sub.content}`);
-        // In a real app, this would open a modal for grading.
     };
 
 })();
