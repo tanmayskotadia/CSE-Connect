@@ -1,0 +1,478 @@
+[
+    {
+        "id": "web-programming",
+        "title": "Web Programming",
+        "icon": "fa-solid fa-globe",
+        "description": "Build modern web applications with HTML, CSS, JavaScript, and frameworks.",
+        "duration": "16 weeks",
+        "credits": 4,
+        "instructor": "Dr. Priya Nair",
+        "folder": "web prog",
+        "modules": [
+            {
+                "moduleNumber": 4,
+                "title": "JavaScript",
+                "lectures": [
+                    {
+                        "id": "lec401",
+                        "title": "Buttons, Functions, Variables",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": true
+                    },
+                    {
+                        "id": "lec402",
+                        "title": "DOM Manipulation",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": false
+                    },
+                    {
+                        "id": "lec403",
+                        "title": "Forms – text input, reset, focus",
+                        "videoUrl": "",
+                        "hasQuiz": false,
+                        "hasAssignment": true
+                    },
+                    {
+                        "id": "lec404",
+                        "title": "Event Handlers: onchange, onmouseover, onmouseout",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": true
+                    }
+                ]
+            },
+            {
+                "moduleNumber": 5,
+                "title": "Advanced JavaScript",
+                "lectures": [
+                    {
+                        "id": "lec501",
+                        "title": "Loops: while, do-while, for",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": false
+                    },
+                    {
+                        "id": "lec502",
+                        "title": "External JS",
+                        "videoUrl": "",
+                        "hasQuiz": false,
+                        "hasAssignment": true
+                    },
+                    {
+                        "id": "lec503",
+                        "title": "Radio Buttons and Checkboxes",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": true
+                    },
+                    {
+                        "id": "lec504",
+                        "title": "fieldset and legend",
+                        "videoUrl": "",
+                        "hasQuiz": false,
+                        "hasAssignment": false
+                    },
+                    {
+                        "id": "lec505",
+                        "title": "CSS Manipulation via JS + z-index",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": true
+                    },
+                    {
+                        "id": "lec506",
+                        "title": "Textarea, Dropdowns, List Boxes",
+                        "videoUrl": "",
+                        "hasQuiz": false,
+                        "hasAssignment": true
+                    },
+                    {
+                        "id": "lec507",
+                        "title": "Canvas Drawing",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": false
+                    },
+                    {
+                        "id": "lec508",
+                        "title": "Event Listeners",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": true
+                    }
+                ]
+            },
+            {
+                "moduleNumber": 6,
+                "title": "ReactJS",
+                "lectures": [
+                    {
+                        "id": "lec601",
+                        "title": "Setup Environment",
+                        "videoUrl": "",
+                        "hasQuiz": false,
+                        "hasAssignment": false
+                    },
+                    {
+                        "id": "lec602",
+                        "title": "JSX Syntax",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": false
+                    },
+                    {
+                        "id": "lec603",
+                        "title": "Components",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": true
+                    },
+                    {
+                        "id": "lec604",
+                        "title": "Lifecycle Methods",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": false
+                    },
+                    {
+                        "id": "lec605",
+                        "title": "Constructors",
+                        "videoUrl": "",
+                        "hasQuiz": false,
+                        "hasAssignment": true
+                    },
+                    {
+                        "id": "lec606",
+                        "title": "React Dev Tools",
+                        "videoUrl": "",
+                        "hasQuiz": false,
+                        "hasAssignment": false
+                    },
+                    {
+                        "id": "lec607",
+                        "title": "React vs React Native",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": false
+                    }
+                ]
+            },
+            {
+                "moduleNumber": 7,
+                "title": "Advanced ReactJS",
+                "lectures": [
+                    {
+                        "id": "lec701",
+                        "title": "State and Props",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": true
+                    },
+                    {
+                        "id": "lec702",
+                        "title": "Props Validation",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": false
+                    },
+                    {
+                        "id": "lec703",
+                        "title": "Styling in React",
+                        "videoUrl": "",
+                        "hasQuiz": false,
+                        "hasAssignment": true
+                    },
+                    {
+                        "id": "lec704",
+                        "title": "Hooks (useState, useEffect)",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": true
+                    },
+                    {
+                        "id": "lec705",
+                        "title": "React Router",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": false
+                    },
+                    {
+                        "id": "lec706",
+                        "title": "Deployment",
+                        "videoUrl": "",
+                        "hasQuiz": false,
+                        "hasAssignment": true
+                    },
+                    {
+                        "id": "lec707",
+                        "title": "Case Studies",
+                        "videoUrl": "",
+                        "hasQuiz": false,
+                        "hasAssignment": true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "data-structures",
+        "title": "Data Structures",
+        "icon": "fa-solid fa-book",
+        "description": "Master arrays, linked lists, trees, graphs and algorithms for efficient problem solving.",
+        "duration": "16 weeks",
+        "credits": 4,
+        "instructor": "Dr. Rajesh Kumar",
+        "folder": "data structure",
+        "modules": [
+            {
+                "moduleNumber": 1,
+                "title": "Arrays & Strings",
+                "lectures": [
+                    {
+                        "id": "ds101",
+                        "title": "Introduction to Arrays",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": true
+                    },
+                    {
+                        "id": "ds102",
+                        "title": "Array Operations",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": true
+                    },
+                    {
+                        "id": "ds103",
+                        "title": "Strings & String Algorithms",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": false
+                    }
+                ]
+            },
+            {
+                "moduleNumber": 2,
+                "title": "Linked Lists",
+                "lectures": [
+                    {
+                        "id": "ds201",
+                        "title": "Singly Linked Lists",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": true
+                    },
+                    {
+                        "id": "ds202",
+                        "title": "Doubly & Circular Lists",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": false
+                    },
+                    {
+                        "id": "ds203",
+                        "title": "Linked List Applications",
+                        "videoUrl": "",
+                        "hasQuiz": false,
+                        "hasAssignment": true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "database-management",
+        "title": "Database Management Systems",
+        "icon": "fa-solid fa-database",
+        "description": "Learn relational databases, SQL, normalization, and transaction management.",
+        "duration": "12 weeks",
+        "credits": 3,
+        "instructor": "Prof. Anita Sharma",
+        "folder": "dbms",
+        "modules": [
+            {
+                "moduleNumber": 1,
+                "title": "Relational Model",
+                "lectures": [
+                    {
+                        "id": "db101",
+                        "title": "ER Diagrams",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": true
+                    },
+                    {
+                        "id": "db102",
+                        "title": "Normalization",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": false
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "operating-systems",
+        "title": "Operating Systems",
+        "icon": "fa-brands fa-ubuntu",
+        "description": "Explore process management, memory allocation, file systems and concurrency.",
+        "duration": "16 weeks",
+        "credits": 4,
+        "instructor": "Dr. Rajesh Kumar",
+        "folder": "os",
+        "modules": [
+            {
+                "moduleNumber": 1,
+                "title": "Process Management",
+                "lectures": [
+                    {
+                        "id": "os101",
+                        "title": "Process Scheduling",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": true
+                    },
+                    {
+                        "id": "os102",
+                        "title": "Threads & Concurrency",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": false
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "computer-networks",
+        "title": "Computer Networks",
+        "icon": "fa-solid fa-network-wired",
+        "description": "Study network protocols, architectures, and data communication fundamentals.",
+        "duration": "12 weeks",
+        "credits": 3,
+        "instructor": "Dr. Meena Iyer",
+        "folder": "cn",
+        "modules": [
+            {
+                "moduleNumber": 1,
+                "title": "Network Fundamentals",
+                "lectures": [
+                    {
+                        "id": "cn101",
+                        "title": "OSI Model",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": false
+                    },
+                    {
+                        "id": "cn102",
+                        "title": "TCP/IP Protocol Suite",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "software-engineering",
+        "title": "Software Engineering",
+        "icon": "fa-solid fa-laptop-code",
+        "description": "Learn SDLC models, agile methods, testing, and project management principles.",
+        "duration": "12 weeks",
+        "credits": 3,
+        "instructor": "Prof. Suman Reddy",
+        "folder": "software engg",
+        "modules": [
+            {
+                "moduleNumber": 1,
+                "title": "SDLC & Agile",
+                "lectures": [
+                    {
+                        "id": "se101",
+                        "title": "Software Development Models",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": true
+                    },
+                    {
+                        "id": "se102",
+                        "title": "Agile & Scrum",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": false
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "artificial-intelligence",
+        "title": "Artificial Intelligence",
+        "icon": "fa-solid fa-microchip",
+        "description": "Explore intelligent agents, search algorithms, knowledge representation, and NLP.",
+        "duration": "16 weeks",
+        "credits": 4,
+        "instructor": "Dr. Kavitha Rao",
+        "folder": "ai",
+        "modules": [
+            {
+                "moduleNumber": 1,
+                "title": "Search Algorithms",
+                "lectures": [
+                    {
+                        "id": "ai101",
+                        "title": "Uninformed Search",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": true
+                    },
+                    {
+                        "id": "ai102",
+                        "title": "Heuristic Search",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": false
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "machine-learning",
+        "title": "Machine Learning",
+        "icon": "fa-solid fa-brain",
+        "description": "Study supervised, unsupervised learning, neural networks, and model evaluation.",
+        "duration": "16 weeks",
+        "credits": 4,
+        "instructor": "Dr. Kavitha Rao",
+        "folder": "ml",
+        "modules": [
+            {
+                "moduleNumber": 1,
+                "title": "Supervised Learning",
+                "lectures": [
+                    {
+                        "id": "ml101",
+                        "title": "Linear Regression",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": true
+                    },
+                    {
+                        "id": "ml102",
+                        "title": "Classification",
+                        "videoUrl": "",
+                        "hasQuiz": true,
+                        "hasAssignment": false
+                    }
+                ]
+            }
+        ]
+    }
+]

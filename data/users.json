@@ -1,0 +1,28 @@
+[
+  {
+    "id": "s001",
+    "role": "student",
+    "name": "Arun",
+    "password": "arun123"
+  },
+  {
+    "id": "s002",
+    "role": "student",
+    "name": "Tanmay Suresh Kotadia",
+    "password": "tanmay123"
+  },
+  {
+    "id": "f001",
+    "role": "faculty",
+    "name": "Dr. Meena",
+    "password": "meena123",
+    "assignedCourses": ["web-programming", "data-structures"]
+  },
+  {
+    "id": "f002",
+    "role": "faculty",
+    "name": "Dr. Rajesh Kumar",
+    "password": "rajesh123",
+    "assignedCourses": ["operating-systems", "artificial-intelligence"]
+  }
+]

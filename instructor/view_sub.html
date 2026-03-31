@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>CSEConnect | Student Submissions</title>
@@ -7,110 +8,51 @@
   <link rel="stylesheet" href="view_sub.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
-<div class="pagewrapper">
-<nav class="navbar">
-  <div class="logo">CSEConnect</div>
-  <div class="nav-links">
-    <a href="faculty_dashboard.html">Dashboard</a>
-    <a class="active">Submissions</a>
-    <a href="../home/index.html">Logout</a>
+  <div class="pagewrapper">
+    <nav class="navbar">
+      <div class="logo">CSEConnect</div>
+      <div class="nav-links">
+        <a href="faculty_dashboard.html">Dashboard</a>
+        <a class="active">Submissions</a>
+        <a href="../home/index.html">Logout</a>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <a class="back" href="faculty_dashboard.html">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back to Dashboard
+      </a>
+
+      <h1>Student Submissions</h1>
+      <p class="subtitle" id="subSubtitle">Loading submissions...</p>
+
+      <div class="table-card">
+        <table>
+          <thead>
+            <tr>
+              <th>Student</th>
+              <th>Assignment</th>
+              <th>Status</th>
+              <th>Submitted</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="globalSubTableBody">
+            <!-- Dynamically populated -->
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
   </div>
-</nav>
-
-<div class="container">
-
-  <a class="back" href="faculty_dashboard.html">
-    <i class="fa-solid fa-arrow-left"></i>
-    Back to Dashboard
-  </a>
-
-  <h1>Student Submissions</h1>
-  <p class="subtitle">8 submissions total</p>
-
-  <div class="table-card">
-    <table>
-      <thead>
-        <tr>
-          <th>Student</th>
-          <th>Assignment</th>
-          <th>Status</th>
-          <th>Submitted</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-
-        <tr>
-          <td>Aarav Mehta</td>
-          <td>Array Operations Implementation</td>
-          <td><span class="badge graded">Graded</span></td>
-          <td>2026-01-18</td>
-          <td><span class="view"><i class="fa-solid fa-eye"></i> View</span></td>
-        </tr>
-
-        <tr>
-          <td>Sneha Kapoor</td>
-          <td>Array Operations Implementation</td>
-          <td><span class="badge submitted">Submitted</span></td>
-          <td>2026-01-19</td>
-          <td><span class="view"><i class="fa-solid fa-eye"></i> View</span></td>
-        </tr>
-
-        <tr>
-          <td>Rohan Gupta</td>
-          <td>ER Diagram Design</td>
-          <td><span class="badge submitted">Submitted</span></td>
-          <td>2026-01-21</td>
-          <td><span class="view"><i class="fa-solid fa-eye"></i> View</span></td>
-        </tr>
-
-        <tr>
-          <td>Priya Singh</td>
-          <td>Linked List Variants</td>
-          <td><span class="badge pending">Pending</span></td>
-          <td>—</td>
-          <td><span class="view disabled"><i class="fa-solid fa-eye"></i> View</span></td>
-        </tr>
-
-        <tr>
-          <td>Vikram Joshi</td>
-          <td>Process Scheduling Simulation</td>
-          <td><span class="badge submitted">Submitted</span></td>
-          <td>2026-01-24</td>
-          <td><span class="view"><i class="fa-solid fa-eye"></i> View</span></td>
-        </tr>
-
-        <tr>
-          <td>Ananya Reddy</td>
-          <td>Responsive Web Page</td>
-          <td><span class="badge graded">Graded</span></td>
-          <td>2026-01-22</td>
-          <td><span class="view"><i class="fa-solid fa-eye"></i> View</span></td>
-        </tr>
-
-        <tr>
-          <td>Karan Patel</td>
-          <td>Complex SQL Queries</td>
-          <td><span class="badge pending">Pending</span></td>
-          <td>—</td>
-          <td><span class="view disabled"><i class="fa-solid fa-eye"></i> View</span></td>
-        </tr>
-
-        <tr>
-          <td>Diya Nair</td>
-          <td>Protocol Analysis Report</td>
-          <td><span class="badge submitted">Submitted</span></td>
-          <td>2026-01-23</td>
-          <td><span class="view"><i class="fa-solid fa-eye"></i> View</span></td>
-        </tr>
-
-      </tbody>
-    </table>
-  </div>
-
-</div>
-
-</div>
+  <script src="../lib/auth.js"></script>
+  <script src="../lib/submissionUtils.js"></script>
+  <script src="view_sub.js"></script>
 </body>
+
 </html>

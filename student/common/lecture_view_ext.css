@@ -1,0 +1,113 @@
+/* =========================================================
+   lecture_view_ext.css — Shared styles for lecture pages
+   ========================================================= */
+
+/* Toast notification */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: #0b1220;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+    opacity: 0;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Status colors for dynamic lec.html */
+.status.completed {
+    background: #ecfdf5;
+    color: #059669;
+}
+
+.status.pending {
+    background: #fefce8;
+    color: #ca8a04;
+}
+
+/* Responsive improvements for dynamic list */
+.lecture-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.lecture-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.lecture-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.lecture-check {
+    width: 20px;
+    height: 20px;
+    cursor: default;
+}
+
+.info h3 {
+    margin: 0 0 4px 0;
+    font-size: 18px;
+}
+
+.info p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.status {
+    display: inline-block;
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-weight: 600;
+    margin-top: 8px;
+    text-transform: uppercase;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+}
+
+.actions button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    background: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 14px;
+}
+
+.actions button:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+.actions button i {
+    margin-right: 6px;
+}

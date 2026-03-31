@@ -1,127 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>CSEConnect | Course Details</title>
 
   <link rel="stylesheet" href="../../common/course_detail.css">
+  <link rel="stylesheet" href="../../common/course_detail_ext.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
 
-<nav class="navbar">
-  <div class="logo">CSEConnect</div>
-  <div class="nav-links">
-    <a href="../../course_page.html">Courses</a>
-    <a href="../../student_dashboard.html">Dashboard</a>
-    <a href="../../../home/index.html">Logout</a>
+  <nav class="navbar">
+    <div class="logo">CSEConnect</div>
+    <div class="nav-links">
+      <a href="../../course_page.html">Courses</a>
+      <a href="../../student_dashboard.html">Dashboard</a>
+      <a href="../../../home/index.html">Logout</a>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <a href="../../course_page.html" class="back-link">
+      <i class="fa-solid fa-arrow-left"></i>
+      Back to Courses
+    </a>
+
+    <section class="course-header">
+
+      <div class="course-header-top">
+        <div class="course-info">
+          <h1>Database Management Systems</h1>
+          <p class="description">
+            Learn the concepts of database design, relational models, SQL,
+            normalization, transaction management, and data integrity.
+          </p>
+        </div>
+
+        <button class="header-btn" onclick="goToLectures()">
+          <i class="fa-solid fa-play"></i>
+          View Lectures
+        </button>
+      </div>
+
+      <div class="meta">
+        <span>
+          <i class="fa-solid fa-clock"></i>
+          12 Weeks
+        </span>
+        <span>
+          <i class="fa-solid fa-graduation-cap"></i>
+          3 Credits
+        </span>
+        <span>
+          <i class="fa-solid fa-user"></i>
+          Prof. Anita Sharma
+        </span>
+      </div>
+
+    </section>
+
+    <section class="content-grid two-col">
+
+      <div class="card">
+        <h3>
+          <i class="fa-solid fa-book"></i>
+          Syllabus
+        </h3>
+        <ol>
+          <li>Introduction to Databases</li>
+          <li>Entity–Relationship Model</li>
+          <li>Relational Model & Constraints</li>
+          <li>SQL Queries and Joins</li>
+          <li>Normalization Techniques</li>
+          <li>Transaction Management</li>
+          <li>Concurrency Control</li>
+          <li>Database Security</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <h3>
+          <i class="fa-solid fa-check-circle"></i>
+          Learning Outcomes
+        </h3>
+        <ul class="outcomes">
+          <li>Design efficient database schemas using ER models</li>
+          <li>Write complex SQL queries for data retrieval</li>
+          <li>Apply normalization to reduce data redundancy</li>
+          <li>Understand transactions, concurrency, and security</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <div class="section-gap"></div>
+
+    <section class="content-grid one-col">
+
+      <div class="card">
+        <h3>
+          <i class="fa-solid fa-file-pdf"></i>
+          University Syllabus
+        </h3>
+
+        <iframe src="../../../pdf/dbms.pdf" class="syllabus-pdf">
+        </iframe>
+
+        <div class="pdf-action">
+          <a href="../../../pdf/dbms.pdf" target="_blank">
+            <i class="fa-solid fa-up-right-from-square"></i>
+            Open in New Tab
+          </a>
+        </div>
+      </div>
+
+    </section>
+
   </div>
-</nav>
-
-<div class="container">
-
-  <a href="../../course_page.html" class="back-link">
-    <i class="fa-solid fa-arrow-left"></i>
-    Back to Courses
-  </a>
-
-  <section class="course-header">
-
-    <div class="course-header-top">
-      <div class="course-info">
-        <h1>Database Management Systems</h1>
-        <p class="description">
-          Learn the concepts of database design, relational models, SQL,
-          normalization, transaction management, and data integrity.
-        </p>
-      </div>
-
-      <button class="header-btn" onclick="goToLectures()">
-        <i class="fa-solid fa-play"></i>
-        View Lectures
-      </button>
-    </div>
-
-    <div class="meta">
-      <span>
-        <i class="fa-solid fa-clock"></i>
-        12 Weeks
-      </span>
-      <span>
-        <i class="fa-solid fa-graduation-cap"></i>
-        3 Credits
-      </span>
-      <span>
-        <i class="fa-solid fa-user"></i>
-        Prof. Anita Sharma
-      </span>
-    </div>
-
-  </section>
-
-  <section class="content-grid two-col">
-
-    <div class="card">
-      <h3>
-        <i class="fa-solid fa-book"></i>
-        Syllabus
-      </h3>
-      <ol>
-        <li>Introduction to Databases</li>
-        <li>Entity–Relationship Model</li>
-        <li>Relational Model & Constraints</li>
-        <li>SQL Queries and Joins</li>
-        <li>Normalization Techniques</li>
-        <li>Transaction Management</li>
-        <li>Concurrency Control</li>
-        <li>Database Security</li>
-      </ol>
-    </div>
-
-    <div class="card">
-      <h3>
-        <i class="fa-solid fa-check-circle"></i>
-        Learning Outcomes
-      </h3>
-      <ul class="outcomes">
-        <li>Design efficient database schemas using ER models</li>
-        <li>Write complex SQL queries for data retrieval</li>
-        <li>Apply normalization to reduce data redundancy</li>
-        <li>Understand transactions, concurrency, and security</li>
-      </ul>
-    </div>
-
-  </section>
-
-  <div class="section-gap"></div>
-
-  <section class="content-grid one-col">
-
-    <div class="card">
-      <h3>
-        <i class="fa-solid fa-file-pdf"></i>
-        University Syllabus
-      </h3>
-
-      <iframe
-        src="../../../pdf/dbms.pdf"
-        class="syllabus-pdf">
-      </iframe>
-
-      <div class="pdf-action">
-        <a href="../../../pdf/dbms.pdf" target="_blank">
-          <i class="fa-solid fa-up-right-from-square"></i>
-          Open in New Tab
-        </a>
-      </div>
-    </div>
-
-  </section>
-
-</div>
-<footer class="footer">
-    &copy; 2026 CSEConnect&trade; · Made by Tanmay Suresh Kotadia
-</footer>
-<script src="course_detail.js"></script>
+  <div id="toast" class="toast"></div>
+  <footer class="footer">
+    &copy; 2026 CSEConnect&trade; &middot; Made by Tanmay Suresh Kotadia
+  </footer>
+  <script>var COURSE_ID = 'database-management';</script>
+  <script src="../../../lib/auth.js"></script>
+  <script src="../../../lib/purchaseUtils.js"></script>
+  <script src="../../common/course_detail_ext.js"></script>
+  <script src="course_detail.js"></script>
 </body>
+
 </html>

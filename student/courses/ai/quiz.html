@@ -1,73 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>CSEConnect | Quiz — Introduction to Artificial Intelligence">
 
-<link rel="stylesheet" href="../../common/quiz.css">
+<head>
+  <meta charset="UTF-8">
+  <title>CSEConnect | Quiz — Introduction to Artificial Intelligence">
+
+    <link rel="stylesheet" href="../../common/quiz.css">
+    <link rel="stylesheet" href="../../common/lecture_view_ext.css">
 </head>
 
 <body>
 
-<nav class="navbar">
-  <div class="logo">CSEConnect</div>
-  <div class="nav-links">
-    <a href="../../course_page.html">Courses</a>
-    <a href="../../student_dashboard.html">Dashboard</a>
-    <a href="../../../home/index.html">Logout</a>
+  <nav class="navbar">
+    <div class="logo">CSEConnect</div>
+    <div class="nav-links">
+      <a href="../../course_page.html">Courses</a>
+      <a href="../../student_dashboard.html">Dashboard</a>
+      <a href="../../../home/index.html">Logout</a>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <a href="lec.html" class="back-link">← Back to Lectures</a>
+
+    <h1>Quiz: Introduction to Artificial Intelligence</h1>
+    <p class="subtitle">Answer all questions and submit</p>
+
+    <div class="quiz-card">
+
+      <form id="quizForm">
+
+        <div class="question">
+          <p>1. What is Artificial Intelligence?</p>
+          <label><input type="radio" name="q1" value="0"> Human intelligence only</label>
+          <label><input type="radio" name="q1" value="1"> Intelligence shown by machines</label>
+          <label><input type="radio" name="q1" value="0"> Hardware technology</label>
+          <label><input type="radio" name="q1" value="0"> Database system</label>
+        </div>
+
+        <div class="question">
+          <p>2. An intelligent agent:</p>
+          <label><input type="radio" name="q2" value="0"> Acts randomly</label>
+          <label><input type="radio" name="q2" value="1"> Perceives and acts on environment</label>
+          <label><input type="radio" name="q2" value="0"> Only stores data</label>
+          <label><input type="radio" name="q2" value="0"> Executes fixed code</label>
+        </div>
+
+        <div class="question">
+          <p>3. Which is a core AI area?</p>
+          <label><input type="radio" name="q3" value="0"> Operating Systems</label>
+          <label><input type="radio" name="q3" value="0"> Networking</label>
+          <label><input type="radio" name="q3" value="1"> Search algorithms</label>
+          <label><input type="radio" name="q3" value="0"> Compilers</label>
+        </div>
+
+        <button class="submit-btn" type="submit">Submit Quiz</button>
+
+        <p id="result"></p>
+
+      </form>
+
+    </div>
+
   </div>
-</nav>
 
-<div class="container">
-
-<a href="lec.html" class="back-link">← Back to Lectures</a>
-
-<h1>Quiz: Introduction to Artificial Intelligence</h1>
-<p class="subtitle">Answer all questions and submit</p>
-
-<div class="quiz-card">
-
-<form id="quizForm">
-
-<div class="question">
-<p>1. What is Artificial Intelligence?</p>
-<label><input type="radio" name="q1" value="0"> Human intelligence only</label>
-<label><input type="radio" name="q1" value="1"> Intelligence shown by machines</label>
-<label><input type="radio" name="q1" value="0"> Hardware technology</label>
-<label><input type="radio" name="q1" value="0"> Database system</label>
-</div>
-
-<div class="question">
-<p>2. An intelligent agent:</p>
-<label><input type="radio" name="q2" value="0"> Acts randomly</label>
-<label><input type="radio" name="q2" value="1"> Perceives and acts on environment</label>
-<label><input type="radio" name="q2" value="0"> Only stores data</label>
-<label><input type="radio" name="q2" value="0"> Executes fixed code</label>
-</div>
-
-<div class="question">
-<p>3. Which is a core AI area?</p>
-<label><input type="radio" name="q3" value="0"> Operating Systems</label>
-<label><input type="radio" name="q3" value="0"> Networking</label>
-<label><input type="radio" name="q3" value="1"> Search algorithms</label>
-<label><input type="radio" name="q3" value="0"> Compilers</label>
-</div>
-
-<button class="submit-btn" type="submit">Submit Quiz</button>
-
-<p id="result"></p>
-
-</form>
-
-</div>
-
-</div>
-
-<footer class="footer">
-&copy; 2026 CSEConnect™ · Made by Tanmay Suresh Kotadia
-</footer>
-
-<script src="../../common/quiz.js"></script>
-
+  <div id="toast" class="toast"></div>
+  <footer class="footer">
+    &copy; 2026 CSEConnect&trade; &middot; Made by Tanmay Suresh Kotadia
+  </footer>
+  <script src="../../../lib/auth.js"></script>
+  <script src="../../../lib/purchaseUtils.js"></script>
+  <script src="../../common/lecture_view_ext.js"></script>
+  <script src="../../common/quiz.js"></script>
 </body>
+
 </html>

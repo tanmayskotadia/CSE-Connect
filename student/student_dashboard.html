@@ -1,110 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>CSEConnect | Student Dashboard</title>
-<link rel="stylesheet" href="student_dashboard.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <meta charset="UTF-8">
+  <title>CSEConnect | Student Dashboard</title>
+  <link rel="stylesheet" href="student_dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
 
-<nav class="navbar">
-  <div class="logo">CSEConnect</div>
-  <div class="nav-links">
-    <a href="course_page.html">Courses</a>
-    <a class="active">Dashboard</a>
-    <a href="/home/index.html">Logout</a>
+  <nav class="navbar">
+    <div class="logo">CSEConnect</div>
+    <div class="nav-links">
+      <a href="course_page.html">Courses</a>
+      <a class="active">Dashboard</a>
+      <a href="/home/index.html">Logout</a>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <section class="profile">
+      <div class="avatar" id="userAvatar">??</div>
+      <div class="profile-info">
+        <h2 id="userNameDisplay">Loading...</h2>
+        <p><span id="userIdDisplay">Loading...</span> · 4th Semester</p>
+        <span>Computer Science & Engineering</span>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat-card">
+        <h3 id="statEnrolled">0</h3>
+        <p>Enrolled Courses</p>
+      </div>
+      <div class="stat-card">
+        <h3 id="statCompleted">0</h3>
+        <p>Completed Lectures</p>
+      </div>
+      <div class="stat-card">
+        <h3 id="statTotal">0</h3>
+        <p>Total Lectures</p>
+      </div>
+      <div class="stat-card">
+        <h3 id="statPending">0</h3>
+        <p>Pending Assignments</p>
+      </div>
+    </section>
+
+    <section class="progress-section">
+      <h3>Overall Progress</h3>
+      <p>Course Completion</p>
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+      <div class="progress-fill" id="overallProgressBar"></div>
   </div>
-</nav>
-
-<div class="container">
-
-  <section class="profile">
-    <div class="avatar">TS</div>
-    <div class="profile-info">
-      <h2>Tanmay Suresh Kotadia</h2>
-      <p>24BCE5281 · 4th Semester</p>
-      <span>Computer Science & Engineering</span>
-    </div>
+  <span class="progress-text" id="overallProgressText">0%</span>
   </section>
 
-  <section class="stats">
-    <div class="stat-card">
-      <h3>5</h3>
-      <p>Enrolled Courses</p>
-    </div>
-    <div class="stat-card">
-      <h3>8</h3>
-      <p>Completed Lectures</p>
-    </div>
-    <div class="stat-card">
-      <h3>18</h3>
-      <p>Total Lectures</p>
-    </div>
-    <div class="stat-card">
-      <h3>3</h3>
-      <p>Pending Assignments</p>
+  <section class="enrolled">
+    <h3>Enrolled Courses</h3>
+
+    <div class="course-grid" id="enrolledCoursesGrid">
+      <!-- Dynamically populated -->
     </div>
   </section>
-
-  <section class="progress-section">
-    <h3>Overall Progress</h3>
-    <p>Course Completion</p>
-    <div class="progress-bar">
-      <div class="progress-fill"></div>
-    </div>
-    <span class="progress-text">44%</span>
-  </section>
-
-<section class="enrolled">
-  <h3>Enrolled Courses</h3>
-
-  <div class="course-grid">
-
-    <div class="course-card">
-    <div class="icon"><i class="fa-solid fa-book"></i></div>
-    <h4>Data Structures</h4>
-    <p>Dr. Rajesh Kumar</p>
-    <span>16 Weeks · 4 Credits</span>
-    </div>
-
-    <div class="course-card">
-    <div class="icon"><i class="fa-solid fa-database"></i></div>
-    <h4>Database Management Systems</h4>
-    <p>Prof. Anita Sharma</p>
-    <span>12 Weeks · 3 Credits</span>
-    </div>
-
-    <div class="course-card">
-    <div class="icon"><i class="fa-brands fa-ubuntu"></i></div>
-    <h4>Operating Systems</h4>
-    <p>Dr. Rajesh Kumar</p>
-    <span>16 Weeks · 4 Credits</span>
-    </div>
-
-    <div class="course-card">
-    <div class="icon"><i class="fa-solid fa-network-wired"></i></div>
-    <h4>Computer Networks</h4>
-    <p>Dr. Meena Iyer</p>
-    <span>12 Weeks · 3 Credits</span>
-    </div>
-
-    <div class="course-card">
-    <div class="icon"><i class="fa-solid fa-globe"></i></div>
-    <h4>Web Programming</h4>
-    <p>Dr. Priya Nair</p>
-    <span>16 Weeks · 4 Credits</span>
-    </div>
 
 
   </div>
-</section>
-
-
-</div>
-<footer class="footer">
+  <footer class="footer">
     &copy; 2026 CSEConnect&trade; · Made by Tanmay Suresh Kotadia
-</footer>
-<script src="student_dashboard.js"></script>
+  </footer>
+  <script src="../lib/auth.js"></script>
+  <script src="../lib/purchaseUtils.js"></script>
+  <script src="student_dashboard.js"></script>
 </body>
+
 </html>

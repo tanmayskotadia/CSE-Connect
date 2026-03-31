@@ -1,55 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>CSEConnect | Assignment — Artificial Intelligence</title>
 
-<link rel="stylesheet" href="../../common/assignment.css">
+<head>
+  <meta charset="UTF-8">
+  <title>CSEConnect | Assignment — Artificial Intelligence</title>
+
+  <link rel="stylesheet" href="../../common/assignment.css">
+  <link rel="stylesheet" href="../../common/lecture_view_ext.css">
 </head>
+
 <body>
 
-<nav class="navbar">
-  <div class="logo">CSEConnect</div>
-  <div class="nav-links">
-    <a href="../../course_page.html">Courses</a>
-    <a href="../../student_dashboard.html">Dashboard</a>
-    <a href="../../../home/index.html">Logout</a>
+  <nav class="navbar">
+    <div class="logo">CSEConnect</div>
+    <div class="nav-links">
+      <a href="../../course_page.html">Courses</a>
+      <a href="../../student_dashboard.html">Dashboard</a>
+      <a href="../../../home/index.html">Logout</a>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <a href="lec.html" class="back-link">← Back to Lectures</a>
+
+    <h1>Intelligent Agents Design</h1>
+    <p class="due-date">Due: 2026-02-22</p>
+
+    <div class="assignment-card">
+
+      <h3>Assignment Question</h3>
+      <p class="question">
+        Design an intelligent agent for a simple environment.
+        Explain the agent’s performance measure, environment, actuators,
+        and sensors with suitable examples.
+      </p>
+
+      <label class="answer-label">Your Answer</label>
+      <textarea placeholder="Type your answer here..."></textarea>
+
+      <button class="submit-btn" onclick="submitAssignment()">Submit Assignment</button>
+
+    </div>
+
   </div>
-</nav>
-
-<div class="container">
-
-  <a href="lec.html" class="back-link">← Back to Lectures</a>
-
-  <h1>Intelligent Agents Design</h1>
-  <p class="due-date">Due: 2026-02-22</p>
-
-  <div class="assignment-card">
-
-    <h3>Assignment Question</h3>
-    <p class="question">
-      Design an intelligent agent for a simple environment.
-      Explain the agent’s performance measure, environment, actuators,
-      and sensors with suitable examples.
-    </p>
-
-    <label class="answer-label">Your Answer</label>
-    <textarea placeholder="Type your answer here..."></textarea>
-
-    <button class="submit-btn" onclick="submitAssignment()">Submit Assignment</button>
-
-  </div>
-
-</div>
-<footer class="footer">
-    &copy; 2026 CSEConnect&trade; · Made by Tanmay Suresh Kotadia
-</footer>
-<script>
-function submitAssignment() {
-  document.querySelector("textarea").value = ""
-  alert("Assignment submitted")
-}
-</script>
-
+  <div id="toast" class="toast"></div>
+  <footer class="footer">
+    &copy; 2026 CSEConnect&trade; &middot; Made by Tanmay Suresh Kotadia
+  </footer>
+  <script src="../../../lib/auth.js"></script>
+  <script src="../../../lib/purchaseUtils.js"></script>
+  <script src="../../../lib/submissionUtils.js"></script>
+  <script src="../../common/lecture_view_ext.js"></script>
 </body>
+
 </html>

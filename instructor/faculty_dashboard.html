@@ -1,84 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>CSEConnect | Faculty Dashboard</title>
   <link rel="stylesheet" href="faculty_dashboard.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
 
-<nav class="navbar">
-  <div class="logo">CSEConnect</div>
-  <div class="nav-links">
-    <a class="active">Dashboard</a>
-    <a href="view_sub.html">Submissions</a>
-    <a href="../home/index.html">Logout</a>
-  </div>
-</nav>
-
-<div class="container">
-
-  <section class="profile-card">
-    <div class="avatar">
-      <i class="fa-solid fa-user-tie"></i>
+  <nav class="navbar">
+    <div class="logo">CSEConnect</div>
+    <div class="nav-links">
+      <a class="active">Dashboard</a>
+      <a href="view_sub.html">Submissions</a>
+      <a href="../home/index.html">Logout</a>
     </div>
-    <div class="profile-info">
-      <h2>Dr. Rajesh Kumar</h2>
-      <p>Associate Professor · 55555</p>
-      <span>Computer Science & Engineering</span>
-    </div>
-  </section>
+  </nav>
 
-  <section class="stats">
-    <div class="stat-box">
-      <h3>9</h3>
-      <p>Total Lectures</p>
-    </div>
-    <div class="stat-box">
-      <h3>4</h3>
-      <p>Upcoming Lectures</p>
-    </div>
-    <div class="stat-box">
-      <h3>5</h3>
-      <p>Pending Submissions</p>
-    </div>
-  </section>
+  <div class="container">
 
-  <section class="courses-header">
-    <h2>Assigned Courses</h2>
-    <button class="view-btn">
-      <i class="fa-solid fa-eye"></i>
-      View Submissions
-    </button>
-  </section>
+    <section class="profile-card">
+      <div class="avatar" id="facAvatar">
+        <i class="fa-solid fa-user-tie"></i>
+      </div>
+      <div class="profile-info">
+        <h2 id="facName">Loading...</h2>
+        <p id="facIdDisplay">Associate Professor · 55555</p>
+        <span>Computer Science & Engineering</span>
+      </div>
+    </section>
 
-  <section class="courses">
+    <section class="stats">
+      <div class="stat-box">
+        <h3 id="statTotalLec">0</h3>
+        <p>Total Lectures</p>
+      </div>
+      <div class="stat-box">
+        <h3 id="statAssigned">0</h3>
+        <p>Assigned Courses</p>
+      </div>
+      <div class="stat-box">
+        <h3 id="statPendingSub">0</h3>
+        <p>Pending Submissions</p>
+      </div>
+    </section>
 
-    <div class="course-card">
-      <div class="icon"><i class="fa-solid fa-book"></i></div>
-      <h3>Data Structures</h3>
-      <p>16 Weeks · 4 Credits</p>
-      <button>Manage</button>
-    </div>
+    <section class="courses-header">
+      <h2>Assigned Courses</h2>
+      <button class="view-btn">
+        <i class="fa-solid fa-eye"></i>
+        View Submissions
+      </button>
+    </section>
 
-    <div class="course-card">
-      <div class="icon"><i class="fa-brands fa-ubuntu"></i></div>
-      <h3>Operating Systems</h3>
-      <p>16 Weeks · 4 Credits</p>
-      <button>Manage</button>
-    </div>
-
-    <div class="course-card">
-      <div class="icon"><i class="fa-solid fa-microchip"></i></div>
-      <h3>Artificial Intelligence</h3>
-      <p>16 Weeks · 4 Credits</p>
-      <button>Manage</button>
-    </div>
-
-  </section>
+    <section class="courses" id="facCourseGrid">
+      <!-- Dynamically populated -->
+    </section>
 
 
-<script src="faculty_dashboard.js"></script>
+    <script src="../lib/auth.js"></script>
+    <script src="../lib/submissionUtils.js"></script>
+    <script src="faculty_dashboard.js"></script>
 </body>
+
 </html>

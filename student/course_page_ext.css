@@ -1,0 +1,54 @@
+/* =========================================================
+   course_page_ext.css — Purchase buttons & toast styles
+   ========================================================= */
+
+/* Buy Now button */
+.course-card button.buy-now {
+  background: #1d4ed8;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.course-card button.buy-now:hover {
+  background: #1e40af;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(29, 78, 216, 0.3);
+}
+
+/* Purchased / Go to Course button */
+.course-card button.purchased {
+  background: #f0fdf4;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+  font-weight: 500;
+}
+
+.course-card button.purchased:hover {
+  background: #dcfce7;
+}
+
+/* Toast notification */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: #0b1220;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+  opacity: 0;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}

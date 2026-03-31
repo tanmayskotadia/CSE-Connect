@@ -1,121 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>CSEConnect | Operating Systems — Lectures</title>
 
-<link rel="stylesheet" href="../../common/lec.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<head>
+  <meta charset="UTF-8">
+  <title>CSEConnect | Operating Systems — Lectures</title>
+
+  <link rel="stylesheet" href="../../common/lec.css">
+  <link rel="stylesheet" href="../../common/lecture_view_ext.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
 
-<nav class="navbar">
-  <div class="logo">CSEConnect</div>
-  <div class="nav-links">
-    <a href="../../course_page.html">Courses</a>
-    <a href="../../student_dashboard.html">Dashboard</a>
-    <a href="../../../home/index.html">Logout</a>
+  <nav class="navbar">
+    <div class="logo">CSEConnect</div>
+    <div class="nav-links">
+      <a href="../../course_page.html">Courses</a>
+      <a href="../../student_dashboard.html">Dashboard</a>
+      <a href="../../../home/index.html">Logout</a>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <a href="course_detail.html" class="back-link">
+      <i class="fa-solid fa-arrow-left"></i>
+      Back to Operating Systems
+    </a>
+
+    <h1>Operating Systems — Lectures</h1>
+    <p class="subtitle">4 lectures available</p>
+
+    <div class="lecture-list">
+
+      <div class="lecture-card">
+        <div class="lecture-left">
+          <input type="checkbox" class="lecture-check" checked>
+          <div class="info">
+            <h3>Introduction to Operating Systems</h3>
+            <p>
+              <i class="fa-solid fa-calendar"></i> 2026-01-17
+              &nbsp;
+              <i class="fa-solid fa-clock"></i> 09:00 AM
+            </p>
+            <span class="status completed">Completed</span>
+          </div>
+        </div>
+        <div class="actions">
+          <button onclick="window.location.href='watch.html'"><i class="fa-solid fa-play"></i> Watch</button>
+          <button onclick="window.location.href='quiz.html'"><i class="fa-solid fa-question"></i> Quiz</button>
+          <button onclick="window.location.href='assignment.html'"><i class="fa-solid fa-file-lines"></i>
+            Assignment</button>
+        </div>
+      </div>
+
+      <div class="lecture-card">
+        <div class="lecture-left">
+          <input type="checkbox" class="lecture-check" checked>
+          <div class="info">
+            <h3>Process Management</h3>
+            <p>
+              <i class="fa-solid fa-calendar"></i> 2026-01-24
+              &nbsp;
+              <i class="fa-solid fa-clock"></i> 09:00 AM
+            </p>
+            <span class="status completed">Completed</span>
+          </div>
+        </div>
+        <div class="actions">
+          <button onclick="window.location.href='watch.html'"><i class="fa-solid fa-play"></i> Watch</button>
+          <button onclick="window.location.href='quiz.html'"><i class="fa-solid fa-question"></i> Quiz</button>
+          <button onclick="window.location.href='assignment.html'"><i class="fa-solid fa-file-lines"></i>
+            Assignment</button>
+        </div>
+      </div>
+
+      <div class="lecture-card">
+        <div class="lecture-left">
+          <input type="checkbox" class="lecture-check">
+          <div class="info">
+            <h3>CPU Scheduling Algorithms</h3>
+            <p>
+              <i class="fa-solid fa-calendar"></i> 2026-02-07
+              &nbsp;
+              <i class="fa-solid fa-clock"></i> 09:00 AM
+            </p>
+            <span class="status pending">Not Completed</span>
+          </div>
+        </div>
+        <div class="actions">
+          <button onclick="window.location.href='watch.html'"><i class="fa-solid fa-play"></i> Watch</button>
+          <button onclick="window.location.href='quiz.html'"><i class="fa-solid fa-question"></i> Quiz</button>
+          <button onclick="window.location.href='assignment.html'"><i class="fa-solid fa-file-lines"></i>
+            Assignment</button>
+        </div>
+      </div>
+
+      <div class="lecture-card">
+        <div class="lecture-left">
+          <input type="checkbox" class="lecture-check">
+          <div class="info">
+            <h3>Memory Management & Virtual Memory</h3>
+            <p>
+              <i class="fa-solid fa-calendar"></i> 2026-02-14
+              &nbsp;
+              <i class="fa-solid fa-clock"></i> 09:00 AM
+            </p>
+            <span class="status pending">Not Completed</span>
+          </div>
+        </div>
+        <div class="actions">
+          <button onclick="window.location.href='watch.html'"><i class="fa-solid fa-play"></i> Watch</button>
+          <button onclick="window.location.href='quiz.html'"><i class="fa-solid fa-question"></i> Quiz</button>
+          <button onclick="window.location.href='assignment.html'"><i class="fa-solid fa-file-lines"></i>
+            Assignment</button>
+        </div>
+      </div>
+
+    </div>
+
   </div>
-</nav>
-
-<div class="container">
-
-  <a href="course_detail.html" class="back-link">
-    <i class="fa-solid fa-arrow-left"></i>
-    Back to Operating Systems
-  </a>
-
-  <h1>Operating Systems — Lectures</h1>
-  <p class="subtitle">4 lectures available</p>
-
-  <div class="lecture-list">
-
-    <div class="lecture-card">
-      <div class="lecture-left">
-        <input type="checkbox" class="lecture-check" checked>
-        <div class="info">
-          <h3>Introduction to Operating Systems</h3>
-          <p>
-            <i class="fa-solid fa-calendar"></i> 2026-01-17
-            &nbsp;
-            <i class="fa-solid fa-clock"></i> 09:00 AM
-          </p>
-          <span class="status completed">Completed</span>
-        </div>
-      </div>
-      <div class="actions">
-        <button onclick="window.location.href='watch.html'"><i class="fa-solid fa-play"></i> Watch</button>
-        <button onclick="window.location.href='quiz.html'"><i class="fa-solid fa-question"></i> Quiz</button>
-        <button onclick="window.location.href='assignment.html'"><i class="fa-solid fa-file-lines"></i> Assignment</button>
-      </div>
-    </div>
-
-    <div class="lecture-card">
-      <div class="lecture-left">
-        <input type="checkbox" class="lecture-check" checked>
-        <div class="info">
-          <h3>Process Management</h3>
-          <p>
-            <i class="fa-solid fa-calendar"></i> 2026-01-24
-            &nbsp;
-            <i class="fa-solid fa-clock"></i> 09:00 AM
-          </p>
-          <span class="status completed">Completed</span>
-        </div>
-      </div>
-      <div class="actions">
-        <button onclick="window.location.href='watch.html'"><i class="fa-solid fa-play"></i> Watch</button>
-        <button onclick="window.location.href='quiz.html'"><i class="fa-solid fa-question"></i> Quiz</button>
-        <button onclick="window.location.href='assignment.html'"><i class="fa-solid fa-file-lines"></i> Assignment</button>
-      </div>
-    </div>
-
-    <div class="lecture-card">
-      <div class="lecture-left">
-        <input type="checkbox" class="lecture-check">
-        <div class="info">
-          <h3>CPU Scheduling Algorithms</h3>
-          <p>
-            <i class="fa-solid fa-calendar"></i> 2026-02-07
-            &nbsp;
-            <i class="fa-solid fa-clock"></i> 09:00 AM
-          </p>
-          <span class="status pending">Not Completed</span>
-        </div>
-      </div>
-      <div class="actions">
-        <button onclick="window.location.href='watch.html'"><i class="fa-solid fa-play"></i> Watch</button>
-        <button onclick="window.location.href='quiz.html'"><i class="fa-solid fa-question"></i> Quiz</button>
-        <button onclick="window.location.href='assignment.html'"><i class="fa-solid fa-file-lines"></i> Assignment</button>
-      </div>
-    </div>
-
-    <div class="lecture-card">
-      <div class="lecture-left">
-        <input type="checkbox" class="lecture-check">
-        <div class="info">
-          <h3>Memory Management & Virtual Memory</h3>
-          <p>
-            <i class="fa-solid fa-calendar"></i> 2026-02-14
-            &nbsp;
-            <i class="fa-solid fa-clock"></i> 09:00 AM
-          </p>
-          <span class="status pending">Not Completed</span>
-        </div>
-      </div>
-      <div class="actions">
-        <button onclick="window.location.href='watch.html'"><i class="fa-solid fa-play"></i> Watch</button>
-        <button onclick="window.location.href='quiz.html'"><i class="fa-solid fa-question"></i> Quiz</button>
-        <button onclick="window.location.href='assignment.html'"><i class="fa-solid fa-file-lines"></i> Assignment</button>
-      </div>
-    </div>
-
-  </div>
-
-</div>
-<footer class="footer">
-    &copy; 2026 CSEConnect&trade; · Made by Tanmay Suresh Kotadia
-</footer>
-<script src="../../common/lec.js"></script>
+  <div id="toast" class="toast"></div>
+  <footer class="footer">
+    &copy; 2026 CSEConnect&trade; &middot; Made by Tanmay Suresh Kotadia
+  </footer>
+  <script src="../../../lib/auth.js"></script>
+  <script src="../../../lib/purchaseUtils.js"></script>
+  <script src="../../../lib/submissionUtils.js"></script>
+  <script src="../../common/lecture_view_ext.js"></script>
+  <script src="../../common/lec.js"></script>
 </body>
+
 </html>

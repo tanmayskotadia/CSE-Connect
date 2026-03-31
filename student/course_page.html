@@ -1,105 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>CSEConnect | Courses</title>
 
-<link rel="stylesheet" href="course_page.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<head>
+  <meta charset="UTF-8">
+  <title>CSEConnect | Courses</title>
+
+  <link rel="stylesheet" href="course_page.css">
+  <link rel="stylesheet" href="course_page_ext.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
 
-<nav class="navbar">
-  <div class="logo">CSEConnect</div>
-  <div class="nav-links">
-    <a class="active">Courses</a>
-    <a href="student_dashboard.html">Dashboard</a>
-    <a href="../home/index.html">Logout</a>
+  <nav class="navbar">
+    <div class="logo">CSEConnect</div>
+    <div class="nav-links">
+      <a class="active">Courses</a>
+      <a href="student_dashboard.html">Dashboard</a>
+      <a href="../home/index.html">Logout</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="header-row">
+      <h1>Courses</h1>
+      <p class="subtitle">Department of Computer Science & Engineering</p>
+
+      <div class="search-container">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="courseSearch" placeholder="Search courses...">
+      </div>
+    </div>
+    <div class="course-grid">
+
+      <div class="course-card" data-course-id="data-structures">
+        <div class="icon"><i class="fa-solid fa-book"></i></div>
+        <h3>Data Structures</h3>
+        <p>Master arrays, linked lists, trees, graphs and algorithms for efficient problem solving.</p>
+        <span>16 weeks · 4 Credits</span>
+        <button class="course-btn">View Course →</button>
+      </div>
+
+      <div class="course-card" data-course-id="database-management">
+        <div class="icon"><i class="fa-solid fa-database"></i></div>
+        <h3>Database Management Systems</h3>
+        <p>Learn relational databases, SQL, normalization, and transaction management.</p>
+        <span>12 weeks · 3 Credits</span>
+        <button class="course-btn">View Course →</button>
+      </div>
+
+      <div class="course-card" data-course-id="operating-systems">
+        <div class="icon"><i class="fa-brands fa-ubuntu"></i></div>
+        <h3>Operating Systems</h3>
+        <p>Explore process management, memory allocation, file systems and concurrency.</p>
+        <span>16 weeks · 4 Credits</span>
+        <button class="course-btn">View Course →</button>
+      </div>
+
+      <div class="course-card" data-course-id="computer-networks">
+        <div class="icon"><i class="fa-solid fa-network-wired"></i></div>
+        <h3>Computer Networks</h3>
+        <p>Study network protocols, architectures, and data communication fundamentals.</p>
+        <span>12 weeks · 3 Credits</span>
+        <button class="course-btn">View Course →</button>
+      </div>
+
+      <div class="course-card" data-course-id="software-engineering">
+        <div class="icon"><i class="fa-solid fa-laptop-code"></i></div>
+        <h3>Software Engineering</h3>
+        <p>Learn SDLC models, agile methods, testing, and project management principles.</p>
+        <span>12 weeks · 3 Credits</span>
+        <button class="course-btn">View Course →</button>
+      </div>
+
+      <div class="course-card" data-course-id="web-programming">
+        <div class="icon"><i class="fa-solid fa-globe"></i></div>
+        <h3>Web Programming</h3>
+        <p>Build modern web applications with HTML, CSS, JavaScript, and frameworks.</p>
+        <span>16 weeks · 4 Credits</span>
+        <button class="course-btn">View Course →</button>
+      </div>
+
+      <div class="course-card" data-course-id="artificial-intelligence">
+        <div class="icon"><i class="fa-solid fa-microchip"></i></div>
+        <h3>Artificial Intelligence</h3>
+        <p>Explore intelligent agents, search algorithms, knowledge representation, and NLP.</p>
+        <span>16 weeks · 4 Credits</span>
+        <button class="course-btn">View Course →</button>
+      </div>
+
+      <div class="course-card" data-course-id="machine-learning">
+        <div class="icon"><i class="fa-solid fa-brain"></i></div>
+        <h3>Machine Learning</h3>
+        <p>Study supervised, unsupervised learning, neural networks, and model evaluation.</p>
+        <span>16 weeks · 4 Credits</span>
+        <button class="course-btn">View Course →</button>
+      </div>
+
+    </div>
   </div>
-</nav>
 
-<div class="container">
-  <div class="header-row">
-    <h1>Courses</h1>
-    <p class="subtitle">Department of Computer Science & Engineering</p>
-
-  <div class="search-container">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <input type="text" id="courseSearch" placeholder="Search courses...">
-  </div>
-  </div>
-  <div class="course-grid">
-
-    <div class="course-card">
-      <div class="icon"><i class="fa-solid fa-book"></i></div>
-      <h3>Data Structures</h3>
-      <p>Master arrays, linked lists, trees, graphs and algorithms for efficient problem solving.</p>
-      <span>16 weeks · 4 Credits</span>
-      <button onclick="openCourse('Data Structures')">View Course →</button>
-    </div>
-
-    <div class="course-card">
-      <div class="icon"><i class="fa-solid fa-database"></i></div>
-      <h3>Database Management Systems</h3>
-      <p>Learn relational databases, SQL, normalization, and transaction management.</p>
-      <span>12 weeks · 3 Credits</span>
-      <button onclick="openCourse('Database Management Systems')">View Course →</button>
-    </div>
-
-    <div class="course-card">
-      <div class="icon"><i class="fa-brands fa-ubuntu"></i></div>
-      <h3>Operating Systems</h3>
-      <p>Explore process management, memory allocation, file systems and concurrency.</p>
-      <span>16 weeks · 4 Credits</span>
-      <button onclick="openCourse('Operating Systems')">View Course →</button>
-    </div>
-
-    <div class="course-card">
-      <div class="icon"><i class="fa-solid fa-network-wired"></i></div>
-      <h3>Computer Networks</h3>
-      <p>Study network protocols, architectures, and data communication fundamentals.</p>
-      <span>12 weeks · 3 Credits</span>
-      <button onclick="openCourse('Computer Networks')">View Course →</button>
-    </div>
-
-    <div class="course-card">
-      <div class="icon"><i class="fa-solid fa-laptop-code"></i></div>
-      <h3>Software Engineering</h3>
-      <p>Learn SDLC models, agile methods, testing, and project management principles.</p>
-      <span>12 weeks · 3 Credits</span>
-      <button onclick="openCourse('Software Engineering')">View Course →</button>
-    </div>
-
-    <div class="course-card">
-      <div class="icon"><i class="fa-solid fa-globe"></i></div>
-      <h3>Web Programming</h3>
-      <p>Build modern web applications with HTML, CSS, JavaScript, and frameworks.</p>
-      <span>16 weeks · 4 Credits</span>
-      <button onclick="openCourse('Web Programming')">View Course →</button>
-    </div>
-
-    <div class="course-card">
-      <div class="icon"><i class="fa-solid fa-microchip"></i></div>
-      <h3>Artificial Intelligence</h3>
-      <p>Explore intelligent agents, search algorithms, knowledge representation, and NLP.</p>
-      <span>16 weeks · 4 Credits</span>
-      <button onclick="openCourse('Artificial Intelligence')">View Course →</button>
-    </div>
-
-    <div class="course-card">
-      <div class="icon"><i class="fa-solid fa-brain"></i></div>
-      <h3>Machine Learning</h3>
-      <p>Study supervised, unsupervised learning, neural networks, and model evaluation.</p>
-      <span>16 weeks · 4 Credits</span>
-      <button onclick="openCourse('Machine Learning')">View Course →</button>
-    </div>
-
-  </div>
-</div>
-<footer class="footer">
+  <div id="toast" class="toast"></div>
+  <footer class="footer">
     &copy; 2026 CSEConnect&trade; · Made by Tanmay Suresh Kotadia
-</footer>
-<script src="course_page.js"></script>
+  </footer>
+  <script src="../lib/auth.js"></script>
+  <script src="../lib/purchaseUtils.js"></script>
+  <script src="course_page.js"></script>
 </body>
+
 </html>

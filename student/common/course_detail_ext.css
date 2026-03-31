@@ -1,0 +1,209 @@
+/* =========================================================
+   course_detail_ext.css — Locked overlay + module accordion
+   ========================================================= */
+
+/* ---------- Locked Overlay ---------- */
+.locked-overlay {
+    position: relative;
+    margin-top: 30px;
+}
+
+.locked-overlay .locked-mask {
+    position: absolute;
+    inset: 0;
+    background: rgba(11, 18, 32, 0.85);
+    backdrop-filter: blur(6px);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    gap: 14px;
+    padding: 40px;
+}
+
+.locked-mask .lock-icon {
+    font-size: 48px;
+    opacity: 0.9;
+}
+
+.locked-mask p {
+    color: #fff;
+    text-align: center;
+    max-width: 380px;
+    font-size: 15px;
+    line-height: 1.6;
+    opacity: 0.95;
+}
+
+.locked-mask .unlock-btn {
+    margin-top: 8px;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 12px;
+    background: #1d4ed8;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.locked-mask .unlock-btn:hover {
+    background: #1e40af;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(29, 78, 216, 0.35);
+}
+
+/* ---------- Module Accordion ---------- */
+.modules-section {
+    margin-top: 40px;
+}
+
+.modules-section>h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.module-accordion {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    margin-bottom: 16px;
+}
+
+.module-header {
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.15s ease;
+}
+
+.module-header:hover {
+    background: #f8fafc;
+}
+
+.module-header h3 {
+    margin: 0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.module-header h3 .mod-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: #eef2ff;
+    color: #1d4ed8;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.module-header .chevron {
+    font-size: 14px;
+    color: #6b7280;
+    transition: transform 0.25s ease;
+}
+
+.module-accordion.open .module-header .chevron {
+    transform: rotate(180deg);
+}
+
+.module-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+}
+
+.module-accordion.open .module-body {
+    max-height: 2000px;
+}
+
+/* ---------- Lecture Rows inside Accordion ---------- */
+.accordion-lecture {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px 14px 56px;
+    border-top: 1px solid #f1f5f9;
+    font-size: 14px;
+    transition: background 0.1s ease;
+}
+
+.accordion-lecture:hover {
+    background: #fafbfc;
+}
+
+.accordion-lecture .lec-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    color: #111;
+}
+
+.accordion-lecture .lec-title.locked {
+    color: #9ca3af;
+}
+
+.accordion-lecture .lec-title .lock-sm {
+    color: #9ca3af;
+    font-size: 13px;
+}
+
+.accordion-lecture .lec-badges {
+    display: flex;
+    gap: 8px;
+}
+
+.accordion-lecture .lec-badge {
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.lec-badge.quiz {
+    background: #eef2ff;
+    color: #1d4ed8;
+}
+
+.lec-badge.assignment {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+/* ---------- Toast ---------- */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: #0b1220;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+    opacity: 0;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}

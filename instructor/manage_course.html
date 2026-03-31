@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSEConnect | Manage Course</title>
+    <link rel="stylesheet" href="faculty_dashboard.css">
+    <link rel="stylesheet" href="manage_course.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">CSEConnect</div>
+        <div class="nav-links">
+            <a href="faculty_dashboard.html">Dashboard</a>
+            <a href="view_sub.html">Submissions</a>
+            <a href="../home/index.html">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="course-header">
+            <a href="faculty_dashboard.html" style="color:#64748b; text-decoration:none; font-size:14px;">← Back to
+                Dashboard</a>
+            <h1 id="courseTitle">Loading...</h1>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="lectures">Lectures</button>
+            <button class="tab-btn" data-tab="quizzes">Quizzes</button>
+            <button class="tab-btn" data-tab="assignments">Assignments</button>
+            <button class="tab-btn" data-tab="submissions">Submissions</button>
+        </div>
+
+        <!-- LECTURES TAB -->
+        <div class="tab-panel active" id="lectures">
+            <div class="card">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+                    <h3>Lectures List</h3>
+                    <button class="primary-btn" onclick="openLectureModal()"><i class="fa-solid fa-plus"></i> Add
+                        Lecture</button>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Quiz</th>
+                                <th>Asgn</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="lectureTableBody">
+                            <!-- Dynamically populated -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUIZZES TAB -->
+        <div class="tab-panel" id="quizzes">
+            <div class="card">
+                <h3>Create New Quiz</h3>
+                <div class="form-group">
+                    <label>Select Lecture</label>
+                    <select id="quizLecSelect"></select>
+                </div>
+                <div class="form-group">
+                    <label>Question</label>
+                    <textarea id="quizQuestion" placeholder="Enter question..."></textarea>
+                </div>
+                <button class="primary-btn" onclick="saveQuiz()">Save Quiz</button>
+            </div>
+        </div>
+
+        <!-- ASSIGNMENTS TAB -->
+        <div class="tab-panel" id="assignments">
+            <div class="card">
+                <h3>Create New Assignment</h3>
+                <div class="form-group">
+                    <label>Select Lecture</label>
+                    <select id="asgnLecSelect"></select>
+                </div>
+                <div class="form-group">
+                    <label>Assignment Title</label>
+                    <input type="text" id="asgnTitle" placeholder="e.g. Memory Management Lab">
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="asgnDesc" placeholder="Enter instructions..."></textarea>
+                </div>
+                <button class="primary-btn" onclick="saveAssignment()">Save Assignment</button>
+            </div>
+        </div>
+
+        <!-- SUBMISSIONS TAB -->
+        <div class="tab-panel" id="submissions">
+            <div class="card">
+                <h3>Student Submissions</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Student</th>
+                                <th>Lecture</th>
+                                <th>Content</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="submissionTableBody">
+                            <!-- Dynamically populated -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ADD/EDIT LECTURE MODAL -->
+    <div class="modal-overlay" id="lectureModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="modalTitle">Add Lecture</h2>
+                <button class="close-modal" onclick="closeLectureModal()">&times;</button>
+            </div>
+            <div class="form-group">
+                <label>Lecture Title</label>
+                <input type="text" id="lecTitleInput">
+            </div>
+            <div class="form-group">
+                <label>Video URL (Optional)</label>
+                <input type="text" id="lecVideoInput">
+            </div>
+            <div style="display:flex; gap:20px; align-items:center; margin-bottom:20px;">
+                <label style="display:flex; align-items:center; gap:8px;">
+                    <input type="checkbox" id="lecQuizCheck"> Has Quiz
+                </label>
+                <label style="display:flex; align-items:center; gap:8px;">
+                    <input type="checkbox" id="lecAsgnCheck"> Has Assignment
+                </label>
+            </div>
+            <button class="primary-btn" style="width:100%;" onclick="handleLectureSave()">Save Lecture</button>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="../lib/auth.js"></script>
+    <script src="../lib/submissionUtils.js"></script>
+    <script src="manage_course.js"></script>
+</body>
+
+</html>

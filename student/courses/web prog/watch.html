@@ -1,82 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>CSEConnect | Introduction to Web Programming</title>
 
-<link rel="stylesheet" href="../../common/watch.css">
+<head>
+    <meta charset="UTF-8">
+    <title>CSEConnect | Introduction to Web Programming</title>
+
+    <link rel="stylesheet" href="../../common/watch.css">
+    <link rel="stylesheet" href="../../common/lecture_view_ext.css">
 </head>
 
 <body>
 
-<nav class="navbar">
-<div class="logo">CSEConnect</div>
+    <nav class="navbar">
+        <div class="logo">CSEConnect</div>
 
-<div class="nav-links">
-<a href="../../course_page.html">Courses</a>
-<a href="../../student_dashboard.html">Dashboard</a>
-<a href="../../../home/index.html">Logout</a>
-</div>
-</nav>
+        <div class="nav-links">
+            <a href="../../course_page.html">Courses</a>
+            <a href="../../student_dashboard.html">Dashboard</a>
+            <a href="../../../home/index.html">Logout</a>
+        </div>
+    </nav>
 
-<div class="container">
+    <div class="container">
 
-<a href="lec.html" class="back-link">← Back to Lectures</a>
+        <a href="lec.html" class="back-link">← Back to Lectures</a>
 
-<h1>Introduction to Web Programming</h1>
+        <h1>Introduction to Web Programming</h1>
 
-<div class="video-box">
-<iframe
-width="100%"
-height="400"
-src="https://www.youtube.com/embed/pQN-pnXPaVg"
-title="Introduction to Web Programming"
-frameborder="0"
-allowfullscreen>
-</iframe>
-</div>
+        <div class="video-box">
+            <iframe width="100%" height="400" src="https://www.youtube.com/embed/pQN-pnXPaVg"
+                title="Introduction to Web Programming" frameborder="0" allowfullscreen>
+            </iframe>
+        </div>
 
-<h2>Interactive Whiteboard</h2>
+        <h2>Interactive Whiteboard</h2>
 
-<div class="whiteboard">
+        <div class="whiteboard">
 
-<canvas id="board"></canvas>
+            <canvas id="board"></canvas>
 
-<div class="board-controls">
+            <div class="board-controls">
 
-<button onclick="setTool('pen')">Pen</button>
-<button onclick="setTool('line')">Line</button>
-<button onclick="setTool('circle')">Circle</button>
-<button onclick="setTool('rect')">Rectangle</button>
+                <button onclick="setTool('pen')">Pen</button>
+                <button onclick="setTool('line')">Line</button>
+                <button onclick="setTool('circle')">Circle</button>
+                <button onclick="setTool('rect')">Rectangle</button>
 
-<button class="clear-btn" onclick="clearBoard()">Clear</button>
-<button class="save-btn" onclick="saveBoard()">Save</button>
+                <button class="clear-btn" onclick="clearBoard()">Clear</button>
+                <button class="save-btn" onclick="saveBoard()">Save</button>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-<br><br>
+        <br><br>
 
-<div class="notes-card">
+        <div class="notes-card">
 
-<h3>📄 Lecture Notes</h3>
+            <h3>📄 Lecture Notes</h3>
 
-<p>
-Web Programming focuses on building interactive and responsive websites.
-This lecture introduces core web technologies such as HTML for structure,
-CSS for styling, and JavaScript for client-side interactivity.
-</p>
+            <p>
+                Web Programming focuses on building interactive and responsive websites.
+                This lecture introduces core web technologies such as HTML for structure,
+                CSS for styling, and JavaScript for client-side interactivity.
+            </p>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
-<footer class="footer">
-© 2026 CSEConnect™ · Made by Tanmay Suresh Kotadia
-</footer>
-
-<script src="../../common/canvas.js"></script>
-
+    <div id="toast" class="toast"></div>
+    <footer class="footer">
+        © 2026 CSEConnect™ &middot; Made by Tanmay Suresh Kotadia
+    </footer>
+    <script src="../../../lib/auth.js"></script>
+    <script src="../../../lib/purchaseUtils.js"></script>
+    <script src="../../common/lecture_view_ext.js"></script>
+    <script src="../../common/canvas.js"></script>
 </body>
+
 </html>

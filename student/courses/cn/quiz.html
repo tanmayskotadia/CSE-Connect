@@ -1,73 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>CSEConnect | Quiz — Introduction to Computer Networks</title>
 
-<link rel="stylesheet" href="../../common/quiz.css">
+<head>
+  <meta charset="UTF-8">
+  <title>CSEConnect | Quiz — Introduction to Computer Networks</title>
+
+  <link rel="stylesheet" href="../../common/quiz.css">
+  <link rel="stylesheet" href="../../common/lecture_view_ext.css">
 </head>
 
 <body>
 
-<nav class="navbar">
-  <div class="logo">CSEConnect</div>
-  <div class="nav-links">
-    <a href="../../course_page.html">Courses</a>
-    <a href="../../student_dashboard.html">Dashboard</a>
-    <a href="../../../home/index.html">Logout</a>
+  <nav class="navbar">
+    <div class="logo">CSEConnect</div>
+    <div class="nav-links">
+      <a href="../../course_page.html">Courses</a>
+      <a href="../../student_dashboard.html">Dashboard</a>
+      <a href="../../../home/index.html">Logout</a>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <a href="lec.html" class="back-link">← Back to Lectures</a>
+
+    <h1>Quiz: Introduction to Computer Networks</h1>
+    <p class="subtitle">Answer all questions and submit</p>
+
+    <div class="quiz-card">
+
+      <form id="quizForm">
+
+        <div class="question">
+          <p>1. What is a computer network?</p>
+          <label><input type="radio" name="q1" value="0"> Single computer</label>
+          <label><input type="radio" name="q1" value="1"> Connected devices</label>
+          <label><input type="radio" name="q1" value="0"> Software</label>
+          <label><input type="radio" name="q1" value="0"> Database</label>
+        </div>
+
+        <div class="question">
+          <p>2. OSI model has:</p>
+          <label><input type="radio" name="q2" value="0"> 3 layers</label>
+          <label><input type="radio" name="q2" value="0"> 5 layers</label>
+          <label><input type="radio" name="q2" value="1"> 7 layers</label>
+          <label><input type="radio" name="q2" value="0"> 9 layers</label>
+        </div>
+
+        <div class="question">
+          <p>3. Which device routes packets?</p>
+          <label><input type="radio" name="q3" value="0"> Hub</label>
+          <label><input type="radio" name="q3" value="0"> Switch</label>
+          <label><input type="radio" name="q3" value="1"> Router</label>
+          <label><input type="radio" name="q3" value="0"> Bridge</label>
+        </div>
+
+        <button class="submit-btn" type="submit">Submit Quiz</button>
+
+        <p id="result"></p>
+
+      </form>
+
+    </div>
+
   </div>
-</nav>
 
-<div class="container">
-
-<a href="lec.html" class="back-link">← Back to Lectures</a>
-
-<h1>Quiz: Introduction to Computer Networks</h1>
-<p class="subtitle">Answer all questions and submit</p>
-
-<div class="quiz-card">
-
-<form id="quizForm">
-
-<div class="question">
-<p>1. What is a computer network?</p>
-<label><input type="radio" name="q1" value="0"> Single computer</label>
-<label><input type="radio" name="q1" value="1"> Connected devices</label>
-<label><input type="radio" name="q1" value="0"> Software</label>
-<label><input type="radio" name="q1" value="0"> Database</label>
-</div>
-
-<div class="question">
-<p>2. OSI model has:</p>
-<label><input type="radio" name="q2" value="0"> 3 layers</label>
-<label><input type="radio" name="q2" value="0"> 5 layers</label>
-<label><input type="radio" name="q2" value="1"> 7 layers</label>
-<label><input type="radio" name="q2" value="0"> 9 layers</label>
-</div>
-
-<div class="question">
-<p>3. Which device routes packets?</p>
-<label><input type="radio" name="q3" value="0"> Hub</label>
-<label><input type="radio" name="q3" value="0"> Switch</label>
-<label><input type="radio" name="q3" value="1"> Router</label>
-<label><input type="radio" name="q3" value="0"> Bridge</label>
-</div>
-
-<button class="submit-btn" type="submit">Submit Quiz</button>
-
-<p id="result"></p>
-
-</form>
-
-</div>
-
-</div>
-
-<footer class="footer">
-&copy; 2026 CSEConnect&trade; · Made by Tanmay Suresh Kotadia
-</footer>
-
-<script src="../../common/quiz.js"></script>
-
+  <div id="toast" class="toast"></div>
+  <footer class="footer">
+    &copy; 2026 CSEConnect&trade; &middot; Made by Tanmay Suresh Kotadia
+  </footer>
+  <script src="../../../lib/auth.js"></script>
+  <script src="../../../lib/purchaseUtils.js"></script>
+  <script src="../../common/lecture_view_ext.js"></script>
+  <script src="../../common/quiz.js"></script>
 </body>
+
 </html>

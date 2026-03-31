@@ -1,127 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>CSEConnect | Course Details</title>
 
   <link rel="stylesheet" href="../../common/course_detail.css">
+  <link rel="stylesheet" href="../../common/course_detail_ext.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
 
-<nav class="navbar">
-  <div class="logo">CSEConnect</div>
-  <div class="nav-links">
-    <a href="../../course_page.html">Courses</a>
-    <a href="../../student_dashboard.html">Dashboard</a>
-    <a href="../../../home/index.html">Logout</a>
+  <nav class="navbar">
+    <div class="logo">CSEConnect</div>
+    <div class="nav-links">
+      <a href="../../course_page.html">Courses</a>
+      <a href="../../student_dashboard.html">Dashboard</a>
+      <a href="../../../home/index.html">Logout</a>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <a href="../../course_page.html" class="back-link">
+      <i class="fa-solid fa-arrow-left"></i>
+      Back to Courses
+    </a>
+
+    <section class="course-header">
+
+      <div class="course-header-top">
+        <div class="course-info">
+          <h1>Web Programming</h1>
+          <p class="description">
+            Learn to design and develop modern, responsive web applications using
+            HTML, CSS, JavaScript, and an introduction to front-end frameworks.
+          </p>
+        </div>
+
+        <button class="header-btn" onclick="goToLectures()">
+          <i class="fa-solid fa-play"></i>
+          View Lectures
+        </button>
+      </div>
+
+      <div class="meta">
+        <span>
+          <i class="fa-solid fa-clock"></i>
+          16 Weeks
+        </span>
+        <span>
+          <i class="fa-solid fa-graduation-cap"></i>
+          4 Credits
+        </span>
+        <span>
+          <i class="fa-solid fa-user"></i>
+          Dr. Priya Nair
+        </span>
+      </div>
+
+    </section>
+
+    <section class="content-grid two-col">
+
+      <div class="card">
+        <h3>
+          <i class="fa-solid fa-book"></i>
+          Syllabus
+        </h3>
+        <ol>
+          <li>Introduction to Web Technologies</li>
+          <li>HTML5 Fundamentals</li>
+          <li>CSS3 & Responsive Design</li>
+          <li>JavaScript Basics</li>
+          <li>DOM Manipulation</li>
+          <li>Client-Side Form Validation</li>
+          <li>Introduction to Front-End Frameworks</li>
+          <li>Web Application Deployment</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <h3>
+          <i class="fa-solid fa-check-circle"></i>
+          Learning Outcomes
+        </h3>
+        <ul class="outcomes">
+          <li>Build responsive and interactive web pages</li>
+          <li>Use HTML, CSS, and JavaScript effectively</li>
+          <li>Develop client-side logic and validations</li>
+          <li>Deploy basic web applications</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <div class="section-gap"></div>
+
+    <section class="content-grid one-col">
+
+      <div class="card">
+        <h3>
+          <i class="fa-solid fa-file-pdf"></i>
+          University Syllabus
+        </h3>
+
+        <iframe src="../../../pdf/webp.pdf" class="syllabus-pdf">
+        </iframe>
+
+        <div class="pdf-action">
+          <a href="../../../pdf/webp.pdf" target="_blank">
+            <i class="fa-solid fa-up-right-from-square"></i>
+            Open in New Tab
+          </a>
+        </div>
+      </div>
+
+    </section>
+
   </div>
-</nav>
-
-<div class="container">
-
-  <a href="../../course_page.html" class="back-link">
-    <i class="fa-solid fa-arrow-left"></i>
-    Back to Courses
-  </a>
-
-  <section class="course-header">
-
-    <div class="course-header-top">
-      <div class="course-info">
-        <h1>Web Programming</h1>
-        <p class="description">
-          Learn to design and develop modern, responsive web applications using
-          HTML, CSS, JavaScript, and an introduction to front-end frameworks.
-        </p>
-      </div>
-
-      <button class="header-btn" onclick="goToLectures()">
-        <i class="fa-solid fa-play"></i>
-        View Lectures
-      </button>
-    </div>
-
-    <div class="meta">
-      <span>
-        <i class="fa-solid fa-clock"></i>
-        16 Weeks
-      </span>
-      <span>
-        <i class="fa-solid fa-graduation-cap"></i>
-        4 Credits
-      </span>
-      <span>
-        <i class="fa-solid fa-user"></i>
-        Dr. Priya Nair
-      </span>
-    </div>
-
-  </section>
-
-  <section class="content-grid two-col">
-
-    <div class="card">
-      <h3>
-        <i class="fa-solid fa-book"></i>
-        Syllabus
-      </h3>
-      <ol>
-        <li>Introduction to Web Technologies</li>
-        <li>HTML5 Fundamentals</li>
-        <li>CSS3 & Responsive Design</li>
-        <li>JavaScript Basics</li>
-        <li>DOM Manipulation</li>
-        <li>Client-Side Form Validation</li>
-        <li>Introduction to Front-End Frameworks</li>
-        <li>Web Application Deployment</li>
-      </ol>
-    </div>
-
-    <div class="card">
-      <h3>
-        <i class="fa-solid fa-check-circle"></i>
-        Learning Outcomes
-      </h3>
-      <ul class="outcomes">
-        <li>Build responsive and interactive web pages</li>
-        <li>Use HTML, CSS, and JavaScript effectively</li>
-        <li>Develop client-side logic and validations</li>
-        <li>Deploy basic web applications</li>
-      </ul>
-    </div>
-
-  </section>
-
-  <div class="section-gap"></div>
-
-  <section class="content-grid one-col">
-
-    <div class="card">
-      <h3>
-        <i class="fa-solid fa-file-pdf"></i>
-        University Syllabus 
-      </h3>
-
-      <iframe
-        src="../../../pdf/webp.pdf"
-        class="syllabus-pdf">
-      </iframe>
-
-      <div class="pdf-action">
-        <a href="../../../pdf/webp.pdf" target="_blank">
-          <i class="fa-solid fa-up-right-from-square"></i>
-          Open in New Tab
-        </a>
-      </div>
-    </div>
-
-  </section>
-
-</div>
-<footer class="footer">
+  <div id="toast" class="toast"></div>
+  <footer class="footer">
     &copy; 2026 CSEConnect&trade; · Made by Tanmay Suresh Kotadia
-</footer>
-<script src="course_detail.js"></script>
+  </footer>
+  <script>var COURSE_ID = 'web-programming';</script>
+  <script src="../../../lib/auth.js"></script>
+  <script src="../../../lib/purchaseUtils.js"></script>
+  <script src="../../common/course_detail_ext.js"></script>
+  <script src="course_detail.js"></script>
 </body>
+
 </html>
